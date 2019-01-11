@@ -38,8 +38,9 @@
         </div>
         <!-- End Preloader -->
         <!-- Begin Container -->
+        @include('inc.messages')
         <div class="container-fluid no-padding h-100">
-            <div class="row flex-row h-100 bg-white">
+            <div class="row flex-row h-100  no-padding bg-white">
                 <!-- Begin Left Content -->
                 <div class="col-xl-3 col-lg-5 col-md-5 col-sm-12 col-12 no-padding">
                     <div class="elisyam-bg background-03">
@@ -63,6 +64,7 @@
                 </div>
                 <!-- End Left Content -->
                 <!-- Begin Right Content -->
+                
                 <div class="col-xl-9 col-lg-7 col-md-7 col-sm-12 col-12 my-auto no-padding">
                     <!-- Begin Form -->
                     <div class="authentication-form-2 mx-auto">
@@ -70,20 +72,21 @@
                             <!-- Begin Sign In -->
                             <div role="tabpanel" class="tab-pane show active" id="singin" aria-labelledby="singin-tab">
                                 <h3>Sign In To FlixZone</h3>
-                                <form>
+                                <form action="{{route('authenticate')}}" method="POST">
+                                {{csrf_field()}}
                                     <div class="group material-input">
-        							    <input type="text" required>
+        							    <input type="email" id="email" name="email" required>
         							    <span class="highlight"></span>
         							    <span class="bar"></span>
         							    <label>Email</label>
                                     </div>
                                     <div class="group material-input">
-        							    <input type="password" required>
+        							    <input type="password" id="password" name="password" required>
         							    <span class="highlight"></span>
         							    <span class="bar"></span>
         							    <label>Password</label>
                                     </div>
-                                </form>
+                                
                                 <div class="row">
                                     <div class="col text-left">
                                         <div class="styled-checkbox">
@@ -96,35 +99,48 @@
                                     </div>
                                 </div>
                                 <div class="sign-btn text-center">
-                                    <a class="btn btn-lg btn-gradient-01" href="/dashboard">
+                                    <button type="submit" class="btn btn-lg btn-gradient-01">
                                         Sign In
-                                    </a>
+                                    </button>
                                 </div>
+                                </form>
                             </div>
                             <!-- End Sign In -->
                             <!-- Begin Sign Up -->
                             <div role="tabpanel" class="tab-pane" id="signup" aria-labelledby="signup-tab">
                                 <h3>Create An Account</h3>
-                                <form>
+                                <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+                                {{csrf_field()}}
                                     <div class="group material-input">
-                                        <input type="text" required>
+                                        <input type="text" id="name" name="name" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="group material-input">
+                                        <input type="email" id="email" name="email" required>
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Email</label>
                                     </div>
                                     <div class="group material-input">
-                                        <input type="password" required>
+                                        <input type="password" id="password" name="password" required>
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Password</label>
                                     </div>
                                     <div class="group material-input">
-                                        <input type="password" required>
+                                        <input type="password" id="conform_password" name="conform_password" required>
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Confirm Password</label>
                                     </div>
-                                </form>
+                                    <div class="group material-input">
+                                        <input type="file" id="profile_image" name="profile_image">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                    </div>
+                                
                                 <div class="row">
                                     <div class="col text-left">
                                         <div class="styled-checkbox">
@@ -134,10 +150,11 @@
                                     </div>
                                 </div>
                                 <div class="sign-btn text-center">
-                                    <a href="db-default.html" class="btn btn-lg btn-gradient-01">
+                                    <button class="btn btn-lg btn-gradient-01">
                                         Sign Up
-                                    </a>
+                                    </button>
                                 </div>
+                                </form>
                             </div>
                             <!-- End Sign Up -->
                         </div>

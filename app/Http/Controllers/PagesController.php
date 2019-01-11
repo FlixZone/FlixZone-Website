@@ -36,14 +36,9 @@ class PagesController extends Controller
         return view('pages.backend.social.social')->with('title',$title);
     }
 
-    public function authentication(){
-        $title="Authentication";
-        return view('pages.backend.authentication.authentication')->with('title',$title);
-    }
-
-    public function logout(){
-        $title="Logout";
-        return view('pages.backend.logout.logout')->with('title',$title);
+    public function changepassword(){
+        $title="Change Password";
+        return view('pages.backend.changepassword.changepassword')->with('title',$title);
     }
  
 }

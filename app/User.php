@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+     // Table Name
+     protected $table = 'users';
+
+     // Primary Key
+     public $primaryKey = 'id';
+ 
+     // Time Stamp
+     public $timestamp = true;
 }
