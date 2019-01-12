@@ -25,7 +25,7 @@
             <!-- Begin Navbar Menu -->
             <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
                 <li class="nav-item dropdown">
-                    <a href="/logout"><i class="ti-power-off"></i></a>
+                    <a href="{{route('logout')}}"><i class="ti-power-off"></i></a>
                 </li>
             </ul>
             <!-- End Navbar Menu -->

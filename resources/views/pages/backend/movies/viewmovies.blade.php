@@ -9,7 +9,7 @@
             <h2 class="page-header-title  text-gradient-01">View Movies</h2>
             <div>
                 <ul class="breadcrumb">
-                    <a href="/addmovie">
+                    <a href="{{route('addmovie')}}">
                         <button type="button" class="btn btn-primary ripple mr-1 mb-2">Add New Movie</button>
                     </a>
                 </ul>
@@ -27,6 +27,7 @@
         </div>
         <div class="widget-body">
             <div class="table-responsive">
+                @if(count($movies)>0)
                 <table id="export-table" class="table mb-0">
                     <thead>
                         <tr>
@@ -38,18 +39,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($movies as $movie)
                         <tr>
-                            <td><span class="text-primary">557263</span></td>
-                            <td>Fast & Furious</td>
-                            <td>https://mega.nz/#!WvBjUAKC!</td>
-                            <td>KlurJA4rKMF_5-RNLvVuTzQ1QHpR_c0POVWi_8mTcSA</td>
+                            <td><span class="text-primary">{{$movie->the_movie_db_id}}</span></td>
+                            <td>{{$movie->name}}</td>
+                            <td>{{$movie->mega_link}}</td>
+                            <td>{{$movie->mega_key}}</td>
                             <td class="td-actions">
                                 <a href="#"><i class="la la-edit edit"></i></a>
                                 <a href="#"><i class="la la-close delete"></i></a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                @else
+                    <h2 class="text-center"> No Movies availabal</h2>
+                @endif
             </div>
         </div>
     </div>

@@ -27,35 +27,36 @@
                 <h4>Add New Movie</h4>
             </div>
             <div class="widget-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="{{route('storemovie')}}" method="POST" enctype="multipart/form-data">
+                {{csrf_field()}}
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">The Movie DB Id</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. 557263" class="form-control">
+                            <input type="number" id="the_movie_db_id" name="the_movie_db_id" placeholder="E.g. 557263" class="form-control" require>
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">Movie Name</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. Fast & Furious" class="form-control">
+                            <input type="text"  id="movie_name" name="movie_name" placeholder="E.g. Fast & Furious" class="form-control" require>
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">Mega-link</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. https://mega.nz/#!WvBjUAKC!" class="form-control">
+                            <input type="text"  id="mega_link" name="mega_link" placeholder="E.g. https://mega.nz/#!WvBjUAKC!" class="form-control" require>
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">Mega-key</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. KlurJA4rKMF_5-RNLvVuTzQ1QHpR_c0POVWi_8mTcSA" class="form-control">
+                            <input type="text"  id="mega_key" name="mega_key" placeholder="E.g. KlurJA4rKMF_5-RNLvVuTzQ1QHpR_c0POVWi_8mTcSA" class="form-control" require>
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">Torrent File</label>
                         <div class="col-lg-9">
-                            <input type="file" class="form-control">
+                            <input type="file"  id="torrent_file" name="torrent_file" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
