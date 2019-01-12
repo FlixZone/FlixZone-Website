@@ -17,11 +17,12 @@ Route::prefix('/dashboard')->middleware('isadmin')->group(function(){
         Route::get('/','PagesController@dashboard')->name('dashboard');
         // Movies pages
         Route::get('/addmovie','MoviesController@addmovie')->name('addmovie');
-        Route::get('/editmovie','MoviesController@editmovie')->name('editmovie');
+        Route::get('/editmovie/{id?}','MoviesController@editmovie')->name('editmovie');
         Route::get('/viewmovies','MoviesController@viewmovies')->name('viewmovies');
         // Movies actions
         Route::post('/storemovie','MoviesController@storemovie')->name('storemovie');
-        Route::get('/editmovie','MoviesController@editmovie')->name('editmovie');
+        Route::put('/updatemovie/{id}','MoviesController@updatemovie')->name('updatemovie');
+        Route::get('/deletemovie/{id?}','MoviesController@deletemovie')->name('deletemovie');
         // TV-Shows
         Route::get('/addtvshow','TVshowsController@addtvshow')->name('addtvshow');
         Route::get('/edittvshow','TVshowsController@edittvshow')->name('edittvshow');

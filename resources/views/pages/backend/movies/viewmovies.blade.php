@@ -46,8 +46,8 @@
                             <td>{{$movie->mega_link}}</td>
                             <td>{{$movie->mega_key}}</td>
                             <td class="td-actions">
-                                <a href="#"><i class="la la-edit edit"></i></a>
-                                <a href="#"><i class="la la-close delete"></i></a>
+                                <a href="{{route('editmovie',$movie->id)}}"><i class="la la-edit edit"></i></a>
+                                <a href="{{route('deletemovie',$movie->id)}}"><i class="la la-close delete"></i></a>
                             </td>
                         </tr>
                         @endforeach

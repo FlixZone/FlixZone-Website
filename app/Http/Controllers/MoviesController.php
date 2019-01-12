@@ -13,9 +13,18 @@ class MoviesController extends Controller
         return view('pages.backend.movies.addmovie')->with('title',$title);
     }
 
-    public function editmovie(){
-        $title="Edit Movie";
-        return view('pages.backend.movies.editmovie')->with('title',$title);
+    public function editmovie($id=NULL){
+        if($id)
+        {
+
+            $title="Edit Movie";
+            $movie = Movie::find($id);
+            return view('pages.backend.movies.editmovie')->with('title',$title)->with('movie',$movie);
+
+        }
+        else{
+            return redirect()->route('pages.backend.movies.viewmovies')->with('error','Perameter is missing. Try again');
+        }
     }
 
     public function viewmovies(){
@@ -72,9 +81,49 @@ class MoviesController extends Controller
         return redirect(route('addmovie'))->with('success','Movie Stored...');
     }
 
-    public function updatemovie(){
+    public function updatemovie(Request $request, $id=NULL){
+
+        if($id)
+        {
+            $this->validate(request(), [
+            
+                'project_name' => 'required',
+                'project_starting_date' => 'required',
+                'project_ending_date' => 'required',
+                'project_description' => 'required',
+            ]);
+    
+            // Update Movie
+            $movie= Movie::find($id);
+            $movie->name = $request->input('project_name');
+            $movie->starting_date = $request->input('project_starting_date');
+            $movie->ending_date = $request->input('project_ending_date');
+            $movie->description = $request->input('project_description');
+            $movie->save();
+    
+            return redirect(route('viewmovies'))->with('success','Movie Updated...');
+
+        }
+        else{
+            return redirect()->route('viewmovies')->with('error','Perameter is missing. Try again');
+        }
         
         return view('pages.backend.movies.editmovie')->with('title',$title);
+    }
+
+    public function deletemovies($id=NULL){
+
+        if($id)
+        {
+            // Delete Movies
+            $movie= Movie::find($id);
+            $movie->delete();    
+            return redirect(route('viewmovies'))->with('error','Movie Deleted...');
+        }
+        else{
+            return redirect()->route('viewmovies')->with('error','Perameter is missing. Try again...');
+        }
+    
     }
 
 }
