@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Movie;
 
 class MoviesController extends Controller
@@ -87,18 +88,47 @@ class MoviesController extends Controller
         {
             $this->validate(request(), [
             
-                'project_name' => 'required',
-                'project_starting_date' => 'required',
-                'project_ending_date' => 'required',
-                'project_description' => 'required',
+            'the_movie_db_id' => 'required',
+            'movie_name' => 'required',
+            'mega_link' => 'required',
+            'mega_key' => 'required',
+            'torrent_file' => 'nullable|mimes:torrent',
             ]);
     
             // Update Movie
             $movie= Movie::find($id);
-            $movie->name = $request->input('project_name');
-            $movie->starting_date = $request->input('project_starting_date');
-            $movie->ending_date = $request->input('project_ending_date');
-            $movie->description = $request->input('project_description');
+            $movie->the_movie_db_id = $request->input('the_movie_db_id');
+            $movie->name = $request->input('movie_name');
+            $movie->mega_link = $request->input('mega_link');
+            $movie->mega_key = $request->input('mega_key');
+    
+            // Handle Torrent Upload
+    
+            if($request->hasFile('torrent_file')){
+                // File Name With Extention
+                $filenameWithExt=$request->file('torrent_file')->getClientOriginalName();
+                // Get just file name
+                $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+                // Get just ext
+                $extention = $request->file('torrent_file')->getClientOriginalExtension();
+                // File name to store
+                $fileNameToStore = $filename.'_'.time().'.'.$extention;
+                // Upload Torrent
+                $path = $request->file('torrent_file')->storeAs('public/torrent_files',$fileNameToStore);
+    
+            }
+
+            if($request->hasFile('torrent_file') &&  $movie->torrent_file != ''){
+                // Delete Old Torrent file
+                Storage::delete(getenv('APP_PATH_TORRENT').'/'.$movie->torrent_file);
+            }
+
+            // Update Torrent file if and only if user wrote it
+
+            if($request->hasFile('torrent_file')){
+                $movie->torrent_file = $fileNameToStore;
+            }
+
             $movie->save();
     
             return redirect(route('viewmovies'))->with('success','Movie Updated...');
@@ -111,12 +141,15 @@ class MoviesController extends Controller
         return view('pages.backend.movies.editmovie')->with('title',$title);
     }
 
-    public function deletemovies($id=NULL){
+    public function deletemovie($id=NULL){
 
         if($id)
         {
             // Delete Movies
             $movie= Movie::find($id);
+            // Delete Torrent File
+            Storage::delete(getenv('APP_PATH_TORRENT').'/'.$movie->torrent_file);
+
             $movie->delete();    
             return redirect(route('viewmovies'))->with('error','Movie Deleted...');
         }

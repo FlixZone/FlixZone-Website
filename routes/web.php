@@ -21,7 +21,7 @@ Route::prefix('/dashboard')->middleware('isadmin')->group(function(){
         Route::get('/viewmovies','MoviesController@viewmovies')->name('viewmovies');
         // Movies actions
         Route::post('/storemovie','MoviesController@storemovie')->name('storemovie');
-        Route::put('/updatemovie/{id}','MoviesController@updatemovie')->name('updatemovie');
+        Route::post('/updatemovie/{id}','MoviesController@updatemovie')->name('updatemovie');
         Route::get('/deletemovie/{id?}','MoviesController@deletemovie')->name('deletemovie');
         // TV-Shows
         Route::get('/addtvshow','TVshowsController@addtvshow')->name('addtvshow');

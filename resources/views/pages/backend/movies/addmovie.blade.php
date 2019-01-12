@@ -10,7 +10,7 @@
             <h2 class="page-header-title  text-gradient-01">Add Movie</h2>
             <div>
                 <ul class="breadcrumb">
-                    <a href="/viewmovies">
+                    <a href="{{route('viewmovies')}}">
                         <button type="button" class="btn btn-primary ripple mr-1 mb-2">View Movies</button>
                     </a>
                 </ul>
