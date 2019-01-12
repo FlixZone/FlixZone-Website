@@ -54,7 +54,7 @@
                     </tbody>
                 </table>
                 @else
-                    <h2 class="text-center"> No Movies availabal</h2>
+                    <h2 class="text-center"> No Movies available</h2>
                 @endif
             </div>
         </div>

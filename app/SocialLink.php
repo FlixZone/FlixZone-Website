@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MegaAccount extends Model
+class SocialLink extends Model
 {
     // Table Name
-    protected $table = 'mega-accounts';
+    protected $table = 'socials';
 
     // Primary Key
     public $primaryKey = 'id';

@@ -15,26 +15,40 @@ Route::prefix('/dashboard')->middleware('isadmin')->group(function(){
         
         // Dashboard
         Route::get('/','PagesController@dashboard')->name('dashboard');
+        
         // Movies pages
         Route::get('/addmovie','MoviesController@addmovie')->name('addmovie');
         Route::get('/editmovie/{id?}','MoviesController@editmovie')->name('editmovie');
         Route::get('/viewmovies','MoviesController@viewmovies')->name('viewmovies');
+        
         // Movies actions
         Route::post('/storemovie','MoviesController@storemovie')->name('storemovie');
         Route::post('/updatemovie/{id}','MoviesController@updatemovie')->name('updatemovie');
         Route::get('/deletemovie/{id?}','MoviesController@deletemovie')->name('deletemovie');
+        
         // TV-Shows
         Route::get('/addtvshow','TVshowsController@addtvshow')->name('addtvshow');
         Route::get('/edittvshow','TVshowsController@edittvshow')->name('edittvshow');
         Route::get('/viewtvshows','TVshowsController@viewtvshows')->name('viewtvshows');
-        // Mega
+        
+        // Mega pages
         Route::get('/addmega','MegaAccountsController@addmegaaccount')->name('addmega');
-        Route::get('/editmega','MegaAccountsController@editmegaaccount')->name('editmega');
+        Route::get('/editmega/{id?}','MegaAccountsController@editmegaaccount')->name('editmega');
         Route::get('/viewmega','MegaAccountsController@viewmegaaccounts')->name('viewmega');
+        
+        // Mega actions
+         Route::post('/storemega','MegaAccountsController@storemegaaccount')->name('storemega');
+         Route::post('/updatemega/{id}','MegaAccountsController@updatemegaaccount')->name('updatemega');
+         Route::get('/deletemega/{id?}','MegaAccountsController@deletemegaaccount')->name('deletemega');
+        
         // Social 
-        Route::get('/sociallinks','PagesController@sociallinks')->name('sociallinks');
+        Route::get('/sociallinks','SociallinksController@sociallinks')->name('sociallinks');
+        Route::post('/update_social_links','SociallinksController@update_social_links')->name('update_social_links');
+
+        
         // Change Password
         Route::get('/changepassword','PagesController@changepassword')->name('changepassword');
+        Route::post('/updatepassword','UsersController@updatepassword')->name('updatepassword');
     
 });
 

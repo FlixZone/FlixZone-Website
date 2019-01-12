@@ -24,7 +24,7 @@ class MoviesController extends Controller
 
         }
         else{
-            return redirect()->route('pages.backend.movies.viewmovies')->with('error','Perameter is missing. Try again');
+            return redirect()->route('pages.backend.movies.viewmovies')->with('error','Perameter is missing. Try again...');
         }
     }
 
@@ -137,8 +137,6 @@ class MoviesController extends Controller
         else{
             return redirect()->route('viewmovies')->with('error','Perameter is missing. Try again');
         }
-        
-        return view('pages.backend.movies.editmovie')->with('title',$title);
     }
 
     public function deletemovie($id=NULL){

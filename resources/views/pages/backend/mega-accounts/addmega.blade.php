@@ -10,7 +10,7 @@
             <h2 class="page-header-title  text-gradient-01">Add Mega Account </h2>
             <div>
                 <ul class="breadcrumb">
-                    <a href="/viewmega">
+                    <a href="{{route('viewmega')}}">
                         <button type="button" class="btn btn-primary ripple mr-1 mb-2">View Mega Accounts</button>
                     </a>
                 </ul>
@@ -27,29 +27,30 @@
                 <h4>Add New Mega Account</h4>
             </div>
             <div class="widget-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="{{route('storemega')}}" method="POST">
+                {{csrf_field()}}
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">File Name</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. Fast & Furious" class="form-control">
+                            <input type="text" id="file_name" name="file_name" placeholder="E.g. Fast & Furious" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">Email</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. xyz@gmail.com" class="form-control">
+                            <input type="email" id="email" name="email" placeholder="E.g. xyz@gmail.com" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">Password</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. qwerty" class="form-control">
+                            <input type="text" id="password" name="password" placeholder="E.g. qwerty" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
                         <label class="col-lg-3 form-control-label">Recovery-key</label>
                         <div class="col-lg-9">
-                            <input type="text" placeholder="E.g. KlurJA4rKMF_5-RNLvVuTzQ1QHpR_c0POVWi_8mTcSA" class="form-control">
+                            <input type="text" id="recovery_key" name="recovery_key" placeholder="E.g. KlurJA4rKMF_5-RNLvVuTzQ1QHpR_c0POVWi_8mTcSA" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row d-flex align-items-center mb-5">
@@ -66,6 +67,5 @@
 </div>
 <!-- End Row -->
 </div>
-
 
 @endsection

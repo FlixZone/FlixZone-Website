@@ -109,4 +109,35 @@ class UsersController extends Controller
         return redirect('/login')->with('success','registration done successfully...');
     }
 
+
+
+
+    public function updatepassword(Request $request){
+
+        $this->validate(request(), [
+                
+            'old_password' => 'required|max:10|min:4',
+            'new_password' => 'required|max:10|min:4',
+            'conform_password'=>'required|same:new_password|max:10|min:4',
+
+            ]);
+
+            $title = "Update Password";
+            
+            $user= User::find(request()->user()->id);
+
+            if(Hash::check($request->old_password,$user->password))
+            {
+                
+                $user->password = Hash::make($request->new_password);
+                $user->save();
+
+                return redirect(route('changepassword'))->with('success','Password updated successfuly...');
+                            
+            }else{
+
+                return redirect(route('changepassword'))->with("error","Sorry Old password doesn't match.. please try again... "); 
+            }
+
+    }
 }

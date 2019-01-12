@@ -13,6 +13,9 @@
 </div>
 <!-- End Page Header -->
 
+<form action="{{route('update_social_links')}}" method="POST">
+{{csrf_field()}}
+
 <div class="row flex-row">
     <!-- Begin Facebook -->
     <div class="col-xl-12 col-md-12 col-sm-12">
@@ -23,10 +26,7 @@
                         <i class="ion-social-facebook text-facebook"></i>
                     </div>
                     <div class="media-body align-self-center">
-                        <input type="text" placeholder="www.facebook.com" class="form-control">
-                    </div>
-                    <div class="align-self-center ml-2 mr-2">
-                        <button type="button" class="btn btn-primary ripple mr-1 mb-2">Submit</button>
+                        <input type="text" id="facebook" name="facebook" value="{{$social->facebook}}" class="form-control" require>
                     </div>
                 </div>
             </div>
@@ -42,10 +42,7 @@
                         <i class="ion-social-twitter text-twitter"></i>
                     </div>
                     <div class="media-body align-self-center">
-                        <input type="text" placeholder="www.twitter.com" class="form-control">
-                    </div>
-                    <div class="align-self-center ml-2 mr-2">
-                        <button type="button" class="btn btn-primary ripple mr-1 mb-2">Submit</button>
+                        <input type="text"  id="twitter" name="twitter" value="{{$social->twitter}}" class="form-control" require>
                     </div>
                 </div>
             </div>
@@ -61,18 +58,20 @@
                         <i class="ion-social-instagram-outline text-instagram"></i>
                     </div>
                     <div class="media-body align-self-center">
-                        <input type="text" placeholder="www.instagram.com" class="form-control">
-                    </div>
-                    <div class="align-self-center ml-2 mr-2">
-                        <button type="button" class="btn btn-primary ripple mr-1 mb-2">Submit</button>
+                        <input type="text"  id="instagram" name="instagram" value="{{$social->instagram}}" class="form-control" require>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Instagram -->
-</div>
 
+    <div class="col-xl-12 col-md-12 col-sm-12">
+        <div class="align-self-center">
+            <button type="submit" class="btn btn-primary ripple mr-1 mb-2">Submit</button>
+        </div>
+    </div>
+</form>
 
 
 @endsection

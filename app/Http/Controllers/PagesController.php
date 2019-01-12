@@ -31,11 +31,6 @@ class PagesController extends Controller
         return view('pages.backend.dashboard.dashboard')->with('title',$title);
     }
 
-    public function sociallinks(){
-        $title="Manage Social Links";
-        return view('pages.backend.social.social')->with('title',$title);
-    }
-
     public function changepassword(){
         $title="Change Password";
         return view('pages.backend.changepassword.changepassword')->with('title',$title);

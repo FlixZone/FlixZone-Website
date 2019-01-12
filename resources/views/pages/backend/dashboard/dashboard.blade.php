@@ -12,60 +12,6 @@
     </div>
 </div>
 <!-- End Page Header -->
-
-<div class="row flex-row">
-    <!-- Begin Facebook -->
-    <div class="col-xl-4 col-md-6 col-sm-6">
-        <div class="widget widget-12 has-shadow">
-            <div class="widget-body">
-                <div class="media">
-                    <div class="align-self-center ml-5 mr-5">
-                        <i class="ion-social-facebook text-facebook"></i>
-                    </div>
-                    <div class="media-body align-self-center">
-                        <div class="title">David Green</div>
-                        <div class="number">10,865 Likes</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Facebook -->
-    <!-- Begin Twitter -->
-    <div class="col-xl-4 col-md-6 col-sm-6">
-        <div class="widget widget-12 has-shadow">
-            <div class="widget-body">
-                <div class="media">
-                    <div class="align-self-center ml-5 mr-5">
-                        <i class="ion-social-twitter text-twitter"></i>
-                    </div>
-                    <div class="media-body align-self-center">
-                        <div class="title">@David_Green</div>
-                        <div class="number">8,986 Followers</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Twitter -->
-    <!-- Begin Linkedin -->
-    <div class="col-xl-4 col-md-6 col-sm-6">
-        <div class="widget widget-12 has-shadow">
-            <div class="widget-body">
-                <div class="media">
-                    <div class="align-self-center ml-5 mr-5">
-                        <i class="ion-social-linkedin-outline text-linkedin"></i>
-                    </div>
-                    <div class="media-body align-self-center">
-                        <div class="title">@David_Green</div>
-                        <div class="number">3,654 Followers</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Linkedin -->
-</div>
                         
 <div class="row flex-row">
     <div class="col-xl-4">
