@@ -41,7 +41,7 @@
         <!-- End Preloader -->
         <div class="page">
             <!-- Begin Header -->
-            @include('inc.header')
+            @include('inc.header2')
             <!-- End Header -->
 
             <!-- Begin Page Content -->

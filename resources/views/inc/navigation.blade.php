@@ -27,6 +27,13 @@
             </ul>
         </li>
         
+        <li><a href="#dropdown-poster" aria-expanded="false" data-toggle="collapse"><i class="la la-image"></i><span>Posters</span></a>
+            <ul id="dropdown-poster" class="collapse list-unstyled pt-0">
+                <li><a href="{{route('addposter')}}">Add Poster</a></li>
+                <li><a href="{{route('viewposters')}}">View Posters</a></li>
+            </ul>
+        </li>
+        
     </ul>
     <span class="heading">Pages</span>
     <ul class="list-unstyled">

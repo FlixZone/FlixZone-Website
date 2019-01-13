@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2019 at 10:16 PM
+-- Generation Time: Jan 13, 2019 at 09:50 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -99,6 +99,30 @@ INSERT INTO `movies` (`id`, `the_movie_db_id`, `name`, `mega_link`, `mega_key`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `posters`
+--
+
+CREATE TABLE `posters` (
+  `id` int(10) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `poster` varchar(40) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `posters`
+--
+
+INSERT INTO `posters` (`id`, `name`, `poster`, `created_at`, `updated_at`) VALUES
+(3, 'snitch', 'snitch_1547366446.jpg', '2019-01-13 02:30:46', '2019-01-13 02:30:46'),
+(4, 'theloneranger', 'theloneranger_1547366525.jpg', '2019-01-13 02:32:05', '2019-01-13 02:32:05'),
+(5, 'aquaman', 'aquaman_1547366555.jpg', '2019-01-13 02:32:35', '2019-01-13 02:32:35'),
+(6, 'madmax', 'madmax_1547366570.jpg', '2019-01-13 02:32:50', '2019-01-13 02:32:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `socials`
 --
 
@@ -183,6 +207,12 @@ ALTER TABLE `movies`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `posters`
+--
+ALTER TABLE `posters`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `socials`
 --
 ALTER TABLE `socials`
@@ -224,6 +254,11 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `movies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `posters`
+--
+ALTER TABLE `posters`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `socials`
 --

@@ -41,6 +41,16 @@ Route::prefix('/dashboard')->middleware('isadmin')->group(function(){
          Route::post('/updatemega/{id}','MegaAccountsController@updatemegaaccount')->name('updatemega');
          Route::get('/deletemega/{id?}','MegaAccountsController@deletemegaaccount')->name('deletemega');
         
+        // Poster pages
+       Route::get('/addposter','PostersController@addposter')->name('addposter');
+       Route::get('/editposter/{id?}','PostersController@editposter')->name('editposter');
+       Route::get('/viewposters','PostersController@viewposters')->name('viewposters');
+       
+        // Poster actions
+        Route::post('/storeposter','PostersController@storeposter')->name('storeposter');
+        Route::post('/updateposter/{id}','PostersController@updateposter')->name('updateposter');
+        Route::get('/deleteposter/{id?}','PostersController@deleteposter')->name('deleteposter'); 
+        
         // Social 
         Route::get('/sociallinks','SociallinksController@sociallinks')->name('sociallinks');
         Route::post('/update_social_links','SociallinksController@update_social_links')->name('update_social_links');

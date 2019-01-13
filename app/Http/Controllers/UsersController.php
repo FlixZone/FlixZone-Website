@@ -38,24 +38,6 @@ class UsersController extends Controller
         return redirect('/');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        try
-        {
-            $title='Signup';
-            return view('pages.backend.signup')->with('title',$title);
-        }
-        catch(\Exception $e)
-        {
-            return redirect()->back()->withErrors($e->getMessage());
-        }
-        
-    }
 
     /**
      * Store a newly created resource in storage.
