@@ -69,7 +69,7 @@ class MoviesController extends Controller
             // File name to store
             $fileNameToStore = $filename.'_'.time().'.'.$extention;
             // Upload Torrent
-            $path = $request->file('torrent_file')->storeAs('public/torrent_files',$fileNameToStore);
+            $path = $request->file('torrent_file')->storeAs('public/movie_torrents',$fileNameToStore);
 
         }else{
             $fileNameToStore = '';
@@ -114,13 +114,13 @@ class MoviesController extends Controller
                 // File name to store
                 $fileNameToStore = $filename.'_'.time().'.'.$extention;
                 // Upload Torrent
-                $path = $request->file('torrent_file')->storeAs('public/torrent_files',$fileNameToStore);
+                $path = $request->file('torrent_file')->storeAs('public/movie_torrents',$fileNameToStore);
     
             }
 
             if($request->hasFile('torrent_file') &&  $movie->torrent_file != ''){
                 // Delete Old Torrent file
-                Storage::delete(getenv('APP_PATH_TORRENT').'/'.$movie->torrent_file);
+                Storage::delete(getenv('APP_PATH_MOVIE_TORRENT').'/'.$movie->torrent_file);
             }
 
             // Update Torrent file if and only if user wrote it
@@ -146,7 +146,7 @@ class MoviesController extends Controller
             // Delete Movies
             $movie= Movie::find($id);
             // Delete Torrent File
-            Storage::delete(getenv('APP_PATH_TORRENT').'/'.$movie->torrent_file);
+            Storage::delete(getenv('APP_PATH_MOVIE_TORRENT').'/'.$movie->torrent_file);
 
             $movie->delete();    
             return redirect(route('viewmovies'))->with('error','Movie Deleted...');

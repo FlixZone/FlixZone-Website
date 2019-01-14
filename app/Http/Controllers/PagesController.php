@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\User;
+use Auth;
 
 class PagesController extends Controller
 {
@@ -27,8 +30,23 @@ class PagesController extends Controller
     }
 
     public function dashboard(){
+
+        $user = DB::table('users')->where('type',0)->count();
+        $movie = DB::table('movies')->count();
+        $tvshow = DB::table('tvshows')->select('name')->distinct()->get()->count();
+        $mega = DB::table('mega-accounts')->select('email')->distinct()->get()->count();
+        // Retriving User Profile
+        $profile = User::find(Auth::user()->id);
+
+        $data = [
+            "user" => $user,
+            "movie" => $movie,
+            "tvshow" => $tvshow,
+            "mega" => $mega,
+        ];
+
         $title="Dashboard";
-        return view('pages.backend.dashboard.dashboard')->with('title',$title);
+        return view('pages.backend.dashboard.dashboard')->with('profile',$profile)->with('data',$data)->with('title',$title);
     }
 
     public function changepassword(){

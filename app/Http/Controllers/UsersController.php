@@ -16,19 +16,12 @@ class UsersController extends Controller
         $email = request('email');
         $password = request('password');
         
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
-        
-            if(Auth::user()->type == 0)
-            {
-                return redirect()->route('login')->with('error','You are only not allowed to login here only admin are allowed to login here user should login in App...');
-            }
-            if(Auth::user()->type == 1)
-            {
-                return redirect()->route('dashboard')->with('success','Logged in successfully...');
-            }
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'type' => 1])) 
+        {
+            return redirect()->route('dashboard')->with('success','Logged in successfully...');
         }
         else{
-            return redirect()->back()->with('error','Error');
+            return redirect()->back()->with('error','You are only not allowed to login here only admin are allowed to login here user should login in App...');
         }
 
     }
@@ -38,13 +31,6 @@ class UsersController extends Controller
         return redirect('/');
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function register(Request $request)
     {
         $this->validate(request(), [

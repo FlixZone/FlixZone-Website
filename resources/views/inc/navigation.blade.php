@@ -6,7 +6,7 @@
     <span class="heading">Components</span>
     <ul class="list-unstyled">
 
-        <li><a href="#dropdown-movies" aria-expanded="false" data-toggle="collapse"><i class="la la-tv"></i><span>Movies</span></a>
+        <li><a href="#dropdown-movies" aria-expanded="false" data-toggle="collapse"><i class="la la-film"></i><span>Movies</span></a>
             <ul id="dropdown-movies" class="collapse list-unstyled pt-0">
                 <li><a href="{{route('addmovie')}}">Add Movie</a></li>
                 <li><a href="{{route('viewmovies')}}">View Movies</a></li>
@@ -20,7 +20,7 @@
             </ul>
         </li>
 
-        <li><a href="#dropdown-mega" aria-expanded="false" data-toggle="collapse"><i class="la la-cloud"></i><span>Mega Accounts</span></a>
+        <li><a href="#dropdown-mega" aria-expanded="false" data-toggle="collapse"><i class="la la-server"></i><span>Mega Accounts</span></a>
             <ul id="dropdown-mega" class="collapse list-unstyled pt-0">
                 <li><a href="{{route('addmega')}}">Add Mega Account</a></li>
                 <li><a href="{{route('viewmega')}}">View Mega Accounts</a></li>
@@ -37,8 +37,8 @@
     </ul>
     <span class="heading">Pages</span>
     <ul class="list-unstyled">
-        <li><a href="{{route('sociallinks')}}"><i class="la la-qq"></i><span>Manage Social Links</span></a></li>
-        <li><a href="{{route('changepassword')}}"><i class="la la-user"></i><span>Change Password</span></a></li>
+        <li><a href="{{route('sociallinks')}}"><i class="la la-instagram"></i><span>Manage Social Links</span></a></li>
+        <li><a href="{{route('changepassword')}}"><i class="la la-key"></i><span>Change Password</span></a></li>
     </ul>   
     
 </nav>

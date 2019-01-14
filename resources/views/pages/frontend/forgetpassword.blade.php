@@ -42,7 +42,7 @@
                 <div class="col-12 my-auto">
                     <div class="password-form mx-auto">
                         <div class="logo-centered">
-                            <a href="db-default.html">
+                            <a href="{{route('index')}}">
                                 <img src="{{asset('backend/assets/img/logo.png')}}" alt="logo">
                             </a>
                         </div>

@@ -26,11 +26,16 @@ Route::prefix('/dashboard')->middleware('isadmin')->group(function(){
         Route::post('/updatemovie/{id}','MoviesController@updatemovie')->name('updatemovie');
         Route::get('/deletemovie/{id?}','MoviesController@deletemovie')->name('deletemovie');
         
-        // TV-Shows
+        // TV-Shows pages
         Route::get('/addtvshow','TVshowsController@addtvshow')->name('addtvshow');
-        Route::get('/edittvshow','TVshowsController@edittvshow')->name('edittvshow');
+        Route::get('/edittvshow/{id?}','TVshowsController@edittvshow')->name('edittvshow');
         Route::get('/viewtvshows','TVshowsController@viewtvshows')->name('viewtvshows');
         
+         // TV-Shows actions
+         Route::post('/storetvshow','TVshowsController@storetvshow')->name('storetvshow');
+         Route::post('/updatetvshow/{id}','TVshowsController@updatetvshow')->name('updatetvshow');
+         Route::get('/deletetvshow/{id?}','TVshowsController@deletetvshow')->name('deletetvshow');
+
         // Mega pages
         Route::get('/addmega','MegaAccountsController@addmegaaccount')->name('addmega');
         Route::get('/editmega/{id?}','MegaAccountsController@editmegaaccount')->name('editmega');

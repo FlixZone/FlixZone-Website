@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2019 at 09:50 AM
+-- Generation Time: Jan 15, 2019 at 12:18 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -46,13 +46,6 @@ CREATE TABLE `mega-accounts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Dumping data for table `mega-accounts`
---
-
-INSERT INTO `mega-accounts` (`id`, `file_name`, `email`, `password`, `recovery_key`, `created_at`, `updated_at`) VALUES
-(2, 'sex in the home', 'hex@voltaer.com', 'hex@voltaer.com', 'hex@voltaer.com', '2019-01-12 14:39:20', '2019-01-12 14:49:01');
-
 -- --------------------------------------------------------
 
 --
@@ -82,20 +75,6 @@ CREATE TABLE `movies` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `movies`
---
-
-INSERT INTO `movies` (`id`, `the_movie_db_id`, `name`, `mega_link`, `mega_key`, `torrent_file`, `created_at`, `updated_at`) VALUES
-(4, 449459, 'THE VANISHING', 'https://mega.nz/#!MFcgxKjb!', 'qJJ_5WD4LynAR9qAHwZyML0oPQujGdl0ZwwPk9IeIcE', 'the-vanishing-2018_1080p_1547294608.torrent', '2019-01-12 06:33:29', '2019-01-12 06:33:29'),
-(5, 47933, 'INDEPENDENCE DAY: RESURGENCE', 'https://mega.nz/#!NAk3SSTI!', '1eICFA9ZPsxOjO-_MdgE5VTXjaBjpkaszp7TD6L0FkQ', 'independence-day-resurgence-2016_1080p_1547294817.torrent', '2019-01-12 06:36:58', '2019-01-12 06:36:58'),
-(6, 561362, 'RUST CREEK', 'https://mega.nz/#!wYEQRIrY!', 's-2KaKw5QuKD1cqDKee6vG6wv60HNbE8vGb5FLvOnsE', 'rust-creek-2018_1080p_1547295053.torrent', '2019-01-12 06:40:53', '2019-01-12 06:40:53'),
-(7, 562685, 'MARS: INSIDE SPACEX', 'https://mega.nz/#!tQ8VECRY!', 'GByEk34V1C5b_m0tIlqS_jTd1_Ci6z_LGcIZGIl5YGU', 'mars-inside-spacex-2018_1080p_1547295226.torrent', '2019-01-12 06:43:46', '2019-01-12 06:43:46'),
-(8, 475094, 'THE CAPTAIN', 'https://mega.nz/#!EM0hXKZD!', 'aXjdWK3NWWZb--dNVdUkcUIEi6F2b44QTVJ98o09vcw', 'bodeln-fran-emsland-2017_1080p_1547295428.torrent', '2019-01-12 06:47:08', '2019-01-12 06:47:08'),
-(9, 527952, 'ANUNNAKI', 'https://mega.nz/#!MFtRFaAY!', 'Te8bS1fpV5FizRWPs9ybqKt_k5MkLI2SO4OI0uFuzi4', 'anunnaki-2017_1080p_1547295526.torrent', '2019-01-12 06:48:46', '2019-01-12 06:48:46'),
-(10, 573632, 'The Last Boy', 'https://mega.nz/#!JosAXACJ!', 'PD7aIQT2ES4BVV3XpSM3xXVFLOPUaYCeCEBPNAZrjPU', '', '2019-01-12 12:05:42', '2019-01-12 12:05:42'),
-(11, 506902, 'Loophole', 'https://mega.nz/#!cF1BwCBS!', '1kZ5HDf48LQjqb3x6l_7jeE3xKMN-GbK7HeL5rf3spE', 'loophole-2019_720p_1547315370.torrent', '2019-01-12 12:07:57', '2019-01-12 12:19:30');
-
 -- --------------------------------------------------------
 
 --
@@ -109,16 +88,6 @@ CREATE TABLE `posters` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `posters`
---
-
-INSERT INTO `posters` (`id`, `name`, `poster`, `created_at`, `updated_at`) VALUES
-(3, 'snitch', 'snitch_1547366446.jpg', '2019-01-13 02:30:46', '2019-01-13 02:30:46'),
-(4, 'theloneranger', 'theloneranger_1547366525.jpg', '2019-01-13 02:32:05', '2019-01-13 02:32:05'),
-(5, 'aquaman', 'aquaman_1547366555.jpg', '2019-01-13 02:32:35', '2019-01-13 02:32:35'),
-(6, 'madmax', 'madmax_1547366570.jpg', '2019-01-13 02:32:50', '2019-01-13 02:32:50');
 
 -- --------------------------------------------------------
 
@@ -149,7 +118,16 @@ INSERT INTO `socials` (`id`, `facebook`, `twitter`, `instagram`, `created_at`, `
 --
 
 CREATE TABLE `tvshows` (
-  `id` int(10) NOT NULL
+  `id` int(10) NOT NULL,
+  `the_movie_db_id` int(10) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `season` varchar(200) NOT NULL,
+  `episode` varchar(200) NOT NULL,
+  `mega_link` varchar(500) NOT NULL,
+  `mega_key` varchar(500) NOT NULL,
+  `torrent_file` varchar(500) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -175,8 +153,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `profile_image`, `type`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(12, 'Vasu', 'vasuratanpara@gmail.com', 'IMG_20170602_1547231082.jpg', 1, '$2y$10$d7Ddbq3zOe6BSEm3oa0OgOsyS55zdYO0q3gxTAeUJ.4XBB5UyY0je', 'KnmqIPXOLOIpTmtB8zJpIQQaCEZNa2fxMWlz5YLWAwIZT6iHJAYmEKVySKFc', '2019-01-11 12:54:42', '2019-01-12 15:43:09'),
-(13, 'Ramakant Gambhava', 'ramakantgambhava@gmail.com', '123 - Copy_1547274228.png', 1, '$2y$10$DhzlLvM.5bZ45bqqi70uqubXxcwcI90gy7pQNj6Q5giUMm4kGfGJm', NULL, '2019-01-12 00:53:48', '2019-01-12 00:53:48');
+(12, 'Vasu', 'vasuratanpara@gmail.com', 'IMG_20170602_1547231082.jpg', 1, '$2y$10$d7Ddbq3zOe6BSEm3oa0OgOsyS55zdYO0q3gxTAeUJ.4XBB5UyY0je', '1eYX00sB0S55r8jJkrFx6YeN3PO33ItKZbaaFrSdqwGAvwxsQ1EKwwqAM5KU', '2019-01-11 12:54:42', '2019-01-12 15:43:09'),
+(13, 'Ramakant Gambhava', 'ramakantgambhava@gmail.com', '123 - Copy_1547274228.png', 1, '$2y$10$DhzlLvM.5bZ45bqqi70uqubXxcwcI90gy7pQNj6Q5giUMm4kGfGJm', NULL, '2019-01-12 00:53:48', '2019-01-12 00:53:48'),
+(14, 'demo', 'demo@demo.com', 'IMG_3294[1]_1547506174.JPG', 0, '$2y$10$QWW7rEmgxbIVt6UvsvFrAOSXZdz6uIZL8TFZEk00yfq9GwlEnlAP.', 'TRpzJ6k2VDOxQzcyz2t0F90IiE9Kxp50YKGWYkee4C0K3VFofo0ca83admtz', '2019-01-14 17:19:34', '2019-01-14 17:19:34');
 
 --
 -- Indexes for dumped tables
@@ -243,7 +222,7 @@ ALTER TABLE `favorites`
 -- AUTO_INCREMENT for table `mega-accounts`
 --
 ALTER TABLE `mega-accounts`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -253,12 +232,12 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posters`
 --
 ALTER TABLE `posters`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `socials`
 --
@@ -273,7 +252,7 @@ ALTER TABLE `tvshows`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

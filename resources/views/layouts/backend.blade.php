@@ -41,7 +41,7 @@
         <!-- End Preloader -->
         <div class="page">
             <!-- Begin Header -->
-            @include('inc.header2')
+            @include('inc.header')
             <!-- End Header -->
 
             <!-- Begin Page Content -->
@@ -90,6 +90,7 @@
         <!-- Begin Page Snippets -->
         <script src="{{asset('backend/assets/js/dashboard/db-default.js')}}"></script>
         <script src="{{asset('backend/assets/js/components/tables/tables.js')}}"></script>
+        <script src="{{asset('backend/assets/js/components/widgets/widgets.min.js')}}"></script>
         <!-- End Page Snippets -->
     </body>
 </html>
