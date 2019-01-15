@@ -56,6 +56,16 @@ Route::prefix('/dashboard')->middleware('isadmin')->group(function(){
         Route::post('/updateposter/{id}','PostersController@updateposter')->name('updateposter');
         Route::get('/deleteposter/{id?}','PostersController@deleteposter')->name('deleteposter'); 
         
+         // App pages
+       Route::get('/addapp','AppsController@addapp')->name('addapp');
+       Route::get('/editapp/{id?}','AppsController@editapp')->name('editapp');
+       Route::get('/viewapps','AppsController@viewapps')->name('viewapps');
+       
+        // App actions
+        Route::post('/storeapp','AppsController@storeapp')->name('storeapp');
+        Route::post('/updateapp/{id}','AppsController@updateapp')->name('updateapp');
+        Route::get('/deleteapp/{id?}','AppsController@deleteapp')->name('deleteapp');
+
         // Social 
         Route::get('/sociallinks','SociallinksController@sociallinks')->name('sociallinks');
         Route::post('/update_social_links','SociallinksController@update_social_links')->name('update_social_links');
@@ -83,6 +93,11 @@ Route::prefix('/')->middleware('checklogin')->group(function(){
     Route::post('register','UsersController@register')->name('register');
     // Authenticate User
     Route::post('authenticate','UsersController@authenticate')->name('authenticate');
+
+    // App download
+    Route::get('/android','AppsController@android')->name('android');
+    Route::get('/iphone','AppsController@iphone')->name('iphone');
+    Route::get('/windows','AppsController@windows')->name('windows');
 
 });
 

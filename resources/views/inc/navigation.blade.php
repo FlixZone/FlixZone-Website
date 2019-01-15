@@ -33,6 +33,13 @@
                 <li><a href="{{route('viewposters')}}">View Posters</a></li>
             </ul>
         </li>
+
+        <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse"><i class="la la-android"></i><span>Apps</span></a>
+            <ul id="dropdown-app" class="collapse list-unstyled pt-0">
+                <li><a href="{{route('addapp')}}">Add App</a></li>
+                <li><a href="{{route('viewapps')}}">View App</a></li>
+            </ul>
+        </li>
         
     </ul>
     <span class="heading">Pages</span>

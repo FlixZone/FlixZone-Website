@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2019 at 12:18 AM
+-- Generation Time: Jan 15, 2019 at 07:11 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `flixzone`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `apps`
+--
+
+CREATE TABLE `apps` (
+  `id` int(10) NOT NULL,
+  `plateform` varchar(40) NOT NULL,
+  `path` varchar(200) NOT NULL,
+  `version` varchar(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -153,13 +168,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `profile_image`, `type`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(12, 'Vasu', 'vasuratanpara@gmail.com', 'IMG_20170602_1547231082.jpg', 1, '$2y$10$d7Ddbq3zOe6BSEm3oa0OgOsyS55zdYO0q3gxTAeUJ.4XBB5UyY0je', '1eYX00sB0S55r8jJkrFx6YeN3PO33ItKZbaaFrSdqwGAvwxsQ1EKwwqAM5KU', '2019-01-11 12:54:42', '2019-01-12 15:43:09'),
-(13, 'Ramakant Gambhava', 'ramakantgambhava@gmail.com', '123 - Copy_1547274228.png', 1, '$2y$10$DhzlLvM.5bZ45bqqi70uqubXxcwcI90gy7pQNj6Q5giUMm4kGfGJm', NULL, '2019-01-12 00:53:48', '2019-01-12 00:53:48'),
-(14, 'demo', 'demo@demo.com', 'IMG_3294[1]_1547506174.JPG', 0, '$2y$10$QWW7rEmgxbIVt6UvsvFrAOSXZdz6uIZL8TFZEk00yfq9GwlEnlAP.', 'TRpzJ6k2VDOxQzcyz2t0F90IiE9Kxp50YKGWYkee4C0K3VFofo0ca83admtz', '2019-01-14 17:19:34', '2019-01-14 17:19:34');
+(1, 'Vasu', 'vasuratanpara@gmail.com', 'IMG_20170602_1547231082.jpg', 1, '$2y$10$d7Ddbq3zOe6BSEm3oa0OgOsyS55zdYO0q3gxTAeUJ.4XBB5UyY0je', 'M9zAj8hbLQGvPom0dDnoFXk2d5gZVzwDMspOaXSI93OZmrW97azL67NdHl6O', '2019-01-11 12:54:42', '2019-01-12 15:43:09'),
+(2, 'Ramakant Gambhava', 'ramakantgambhava@gmail.com', '123 - Copy_1547274228.png', 1, '$2y$10$DhzlLvM.5bZ45bqqi70uqubXxcwcI90gy7pQNj6Q5giUMm4kGfGJm', NULL, '2019-01-12 00:53:48', '2019-01-12 00:53:48'),
+(3, 'demo', 'demo@demo.com', 'IMG_3294[1]_1547506174.JPG', 0, '$2y$10$QWW7rEmgxbIVt6UvsvFrAOSXZdz6uIZL8TFZEk00yfq9GwlEnlAP.', 'TRpzJ6k2VDOxQzcyz2t0F90IiE9Kxp50YKGWYkee4C0K3VFofo0ca83admtz', '2019-01-14 17:19:34', '2019-01-14 17:19:34');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `apps`
+--
+ALTER TABLE `apps`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `plateform` (`plateform`);
 
 --
 -- Indexes for table `favorites`
@@ -183,7 +205,8 @@ ALTER TABLE `migrations`
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `the_movie_db_id` (`the_movie_db_id`);
 
 --
 -- Indexes for table `posters`
@@ -213,6 +236,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `apps`
+--
+ALTER TABLE `apps`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `favorites`
 --

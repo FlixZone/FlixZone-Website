@@ -27,6 +27,7 @@
         <div class="selene-preloader"></div>
     </div>
 
+    
     <!-- ***** Header Area Start ***** -->
     <header class="header_area animated">
         <div class="container-fluid">
@@ -43,14 +44,10 @@
                                 <ul class="navbar-nav ml-auto" id="nav">
                                     <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                                     
-                                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
 
-                                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a></li>
                                 </ul>
-                                <!-- Search btn -->
-                                <div class="search-button d-lg-none">
-                                    <a href="#" class="search-btn"><img src="{{asset('frontend/img/core-img/search-icon.png')}}" alt="Search"></a>
-                                </div>
                             </div>
                         </nav>
                     </div>
@@ -60,19 +57,6 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Search Form Area Start ***** -->
-    <div class="search-form-area">
-        <!-- Remove btn -->
-        <div class="remove-btn">
-            <i class="fa fa-times"></i>
-        </div>
-        <!-- Search Form -->
-        <form action="#" method="post">
-            <input type="search" name="search" id="search" placeholder="Type keywords &amp; hit enter">
-            <button type="submit" class="d-none"><img src="{{asset('frontend/img/core-img/search-icon.png')}}" alt="Search"></button>
-        </form>
-    </div>
-    <!-- ***** Search Form Area End ***** -->
 
     <!-- ***** Wellcome Area Start ***** -->
     <section class="welcome_area clearfix" id="home">
@@ -86,18 +70,23 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md-7">
+                    @include('inc.messages')
                     <div class="welcome-content">
-                        <h2><span>SELENE</span> THE APP</h2>
+                        <h2><span>FlixZone</span> APP</h2>
                         <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta.</h4>
                     </div>
                     <div class="app-download-area">
-                        <div class="app-download-btn active">
+                        <div class="app-download-btn">
                             <!-- Google Store Btn -->
-                            <a href="#"><i class="fa fa-android"></i><p class="mb-0"><span>available on</span> Google Store</p></a>
+                            <a href="{{route('android')}}"><i class="fa fa-android"></i><p class="mb-0"><span>available on</span> Google Store</p></a>
+                        </div>
+                        <div class="app-download-btn">
+                            <!-- Windows Store Btn -->
+                            <a href="{{route('windows')}}"><i class="fa fa-windows"></i><p class="mb-0"><span>available on</span> Windows Store</p></a>
                         </div>
                         <div class="app-download-btn">
                             <!-- Apple Store Btn -->
-                            <a href="#"><i class="fa fa-apple"></i><p class="mb-0"><span>available on</span> Apple Store</p></a>
+                            <a href="{{route('iphone')}}"><i class="fa fa-apple"></i><p class="mb-0"><span>available on</span> Apple Store</p></a>
                         </div>
                     </div>
                     <!-- Scroll btn -->
@@ -407,12 +396,16 @@
                     </div>
                     <div class="app-download-area">
                         <div class="app-download-btn active">
+                            <!-- Windows Store Btn -->
+                            <a href="{{route('windows')}}"><i class="fa fa-windows"></i><p class="mb-0"><span>available on</span> Windows Store</p></a>
+                        </div>
+                        <div class="app-download-btn active">
                             <!-- Google Store Btn -->
-                            <a href="#"><i class="fa fa-android"></i><p class="mb-0"><span>available on</span> Google Store</p></a>
+                            <a href="{{route('android')}}"><i class="fa fa-android"></i><p class="mb-0"><span>available on</span> Google Store</p></a>
                         </div>
                         <div class="app-download-btn">
                             <!-- Apple Store Btn -->
-                            <a href="#"><i class="fa fa-apple"></i><p class="mb-0"><span>available on</span> Apple Store</p></a>
+                            <a href="{{route('iphone')}}"><i class="fa fa-apple"></i><p class="mb-0"><span>available on</span> Apple Store</p></a>
                         </div>
                     </div>
                     <div class="footer-social-info">
