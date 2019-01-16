@@ -17,8 +17,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// List Movies
-Route::get('movies','MoviesController@index');
+// Moives
 
-// List Single Movie
-Route::get('movie/{id}','MoviesController@show');
+    // List Movies
+    Route::get('movies','MoviesController@index');
+
+    // List Single Movie
+    Route::get('movie/{id}','MoviesController@show');
+
+// Posters
+
+    // List Posters
+    Route::get('posters','PostersController@index');

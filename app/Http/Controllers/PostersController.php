@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Poster;
+use App\Http\Resources\Poster as PosterResource;
 
 class PostersController extends Controller
 {
@@ -136,5 +137,16 @@ class PostersController extends Controller
         else{
             return redirect()->route('viewposters')->with('error','Perameter is missing. Try again...');
         }
+    }
+
+    // API Methods
+
+    public function index(){
+        // Get Poster
+        $posters = Poster::all();
+
+        // Returen collection of posters as a resource
+        return PosterResource::collection($posters);
+
     }
 }
