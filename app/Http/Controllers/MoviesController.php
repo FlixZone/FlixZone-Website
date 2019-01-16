@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Movie;
+use App\Http\Resources\Movie as MovieResource;
 
 class MoviesController extends Controller
 {
@@ -137,7 +138,7 @@ class MoviesController extends Controller
         else{
             return redirect()->route('viewmovies')->with('error','Perameter is missing. Try again');
         }
-    }
+    } 
 
     public function deletemovie($id=NULL){
 
@@ -156,5 +157,26 @@ class MoviesController extends Controller
         }
     
     }
+
+    // API Methods
+
+    public function index(){
+        // Get Movies
+        $movies = Movie::all();
+
+        // Returen collection of movies as a resource
+        return MovieResource::collection($movies);
+
+    }
+
+    public function show($id){
+        // Get Single Movie
+        $movie = Movie::findOrFail($id);
+
+        // Returen single movie as a resource
+        return new MovieResource($movie);
+    }
+
+
 
 }
