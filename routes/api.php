@@ -17,15 +17,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Moives
 
-    // List Movies
-    Route::get('movies','MoviesController@index');
+Route::group(['middleware' => 'cors'], function() {
 
-    // List Single Movie
-    Route::get('movie/{id}','MoviesController@show');
+    // Moives
 
-// Posters
+        // List Movies
+        Route::get('movies','MoviesController@index');
 
-    // List Posters
-    Route::get('posters','PostersController@index');
+        // List Single Movie
+        Route::get('movie/{id}','MoviesController@show');
+
+    // Posters
+
+        // List Posters
+        Route::get('posters','PostersController@index');
+        
+});
