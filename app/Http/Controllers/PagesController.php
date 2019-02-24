@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 class PagesController extends Controller
 {
@@ -14,9 +16,25 @@ class PagesController extends Controller
         return view('pages.frontend.index')->with('title',$title);
     }
 
-    public function contact(){
-        $title="Contact";
-        return view('pages.frontend.contact')->with('title',$title);
+    public function contact(Request $request){
+        
+        if($request['email'] && $request['reason'] && $request['message']){
+           
+           $email = 'vasuratanpara@gmail.com';
+           
+           $data = array(
+                'email'=>$request['email'],
+                'reason'=>$request['reason'],
+                'message'=>$request['message']
+           );
+
+            Mail::to($email)->send(new ContactMail($data));
+
+            return redirect(route('index'))->with('success','Success ! Message sent.');
+       }else {
+            return redirect(route('index'))->with('error','Try again ! Message did not send.');
+       }
+       
     }
 
     public function login(){

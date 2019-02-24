@@ -1,443 +1,638 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
-    <meta charset="UTF-8">
+
+    <!--- basic page needs
+   ================================================== -->
+    <meta charset="utf-8">
+    <title>FlixZone</title>
     <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="">
 
-    <!-- Title -->
-    <title>{{$title}}</title>
+    <!-- mobile specific metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{asset('frontend/img/core-img/favicon.ico')}}">
+    <!-- CSS
+   ================================================== -->
+    <link rel="stylesheet" href="{{asset('frontend/css/base.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/vendor.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/main.css')}}">
 
-    <!-- Core Stylesheet -->
-    <link href="{{asset('frontend/style.css')}}" rel="stylesheet">
+    <!-- script
+   ================================================== -->
+    <script src="{{asset('frontend/js/modernizr.js')}}"></script>
+    <script src="{{asset('frontend/js/pace.min.js')}}"></script>
 
-    <!-- Responsive CSS -->
-    <link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet">
+    <!-- favicons
+	================================================== -->
+    <link rel="shortcut icon" href="{{asset('frontend/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('frontend/favicon.ico')}}" type="image/x-icon">
 
 </head>
 
-<body>
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="selene-preloader"></div>
-    </div>
+<body id="top">
 
-    
-    <!-- ***** Header Area Start ***** -->
-    <header class="header_area animated">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <!-- Menu Area Start -->
-                <div class="col-12">
-                    <div class="menu_area">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <!-- Logo -->
-                            <a class="navbar-brand" href="#">{{$title}}</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#selene-navbar" aria-controls="selene-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                            <!-- Menu Area -->
-                            <div class="collapse navbar-collapse" id="selene-navbar">
-                                <ul class="navbar-nav ml-auto" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                                    
-                                    <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
+    <!-- header 
+   ================================================== -->
+   <header id="header" class="row">   
 
-                                    <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-
-
-    <!-- ***** Wellcome Area Start ***** -->
-    <section class="welcome_area clearfix" id="home">
-
-        <!-- Shape -->
-        <div class="welcome-bg-shape">
-            <img class="welcome-first-shape" src="{{asset('frontend/img/core-img/welcome-bg-1.png')}}" alt="">
-            <img class="welcome-second-shape" src="{{asset('frontend/img/core-img/welcome-bg-2.png')}}" alt="">
-        </div>
-
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 col-md-7">
-                    @include('inc.messages')
-                    <div class="welcome-content">
-                        <h2><span>FlixZone</span> APP</h2>
-                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta.</h4>
-                    </div>
-                    <div class="app-download-area">
-                        <div class="app-download-btn">
-                            <!-- Google Store Btn -->
-                            <a href="{{route('android')}}"><i class="fa fa-android"></i><p class="mb-0"><span>available on</span> Google Store</p></a>
-                        </div>
-                        <div class="app-download-btn">
-                            <!-- Windows Store Btn -->
-                            <a href="{{route('windows')}}"><i class="fa fa-windows"></i><p class="mb-0"><span>available on</span> Windows Store</p></a>
-                        </div>
-                        <div class="app-download-btn">
-                            <!-- Apple Store Btn -->
-                            <a href="{{route('iphone')}}"><i class="fa fa-apple"></i><p class="mb-0"><span>available on</span> Apple Store</p></a>
-                        </div>
-                    </div>
-                    <!-- Scroll btn -->
-                    <div class="scroll-down-btn">
-                        <a href="#about" class="scrollDown">Scroll Down <i class="fa fa-angle-double-down scroll-down" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Device -->
-        <div class="welcome-mobile-device text-right">
-            <img src="{{asset('frontend/img/bg-img/wel-dev-1.png')}}" alt="">
-            <img src="{{asset('frontend/img/bg-img/wel-dev-2.png')}}" alt="">
-        </div>
-    </section>
-    <!-- ***** Wellcome Area End ***** -->
-
-    <!-- ***** About App Area Start ***** -->
-    <div class="about-app-area" id="about">
-
-        <!-- Shape -->
-        <div class="about-us-bg-shape">
-            <img src="{{asset('frontend/img/core-img/about-bg.png')}}" alt="">
-        </div>
-
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <!-- About App Slider -->
-                <div class="col-12 col-md-7">
-                    <div class="about-apps-slider owl-carousel">
-                        <!-- Single Slide -->
-                        <div class="app-single-slide">
-                            <img src="{{asset('frontend/img/bg-img/slide-1.jpg')}}" alt="">
-                        </div>
-                        <!-- Single Slide -->
-                        <div class="app-single-slide">
-                            <img src="{{asset('frontend/img/bg-img/slide-2.jpg')}}" alt="">
-                        </div>
-                        <!-- Single Slide -->
-                        <div class="app-single-slide">
-                            <img src="{{asset('frontend/img/bg-img/slide-3.jpg')}}" alt="">
-                        </div>
-                        <!-- Single Slide -->
-                        <div class="app-single-slide">
-                            <img src="{{asset('frontend/img/bg-img/slide-2.jpg')}}" alt="">
-                        </div>
-                    </div>
-                </div>
-                <!-- About App Content -->
-                <div class="col-12 col-md-5">
-                    <div class="about-app-content">
-                        <h2>Mobile ready</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta.Lorem ipsum dolor sit amet.</p>
-                        <div class="app-feature-icon d-flex">
-                            <!-- Single App Feature Icon  -->
-                            <div class="single-app-feature-icon d-flex align-items-center justify-content-center">
-                                <img src="{{asset('frontend/img/bg-img/icon-1.png')}}" alt="">
-                            </div>
-                            <!-- Single App Feature Icon  -->
-                            <div class="single-app-feature-icon d-flex align-items-center justify-content-center">
-                                <img src="{{asset('frontend/img/bg-img/icon-2.png')}}" alt="">
-                            </div>
-                            <!-- Single App Feature Icon  -->
-                            <div class="single-app-feature-icon d-flex align-items-center justify-content-center">
-                                <img src="{{asset('frontend/img/bg-img/icon-3.png')}}" alt="">
-                            </div>
-                            <!-- Single App Feature Icon  -->
-                            <div class="single-app-feature-icon d-flex align-items-center justify-content-center">
-                                <img src="{{asset('frontend/img/bg-img/icon-4.png')}}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ***** About App Area End ***** -->
-
-    <!-- ***** App FAQ Area Start ***** -->
-    <section class="app-faq-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="app-faq-content">
-                        <h2>An app for Each <br>&amp; Everyone</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. Curabitur pulvinar vel augue sit amet vestibulum. Proin tempus lacus porta.Lorem ipsum dolor sit amet.</p>
-                        <!-- Accordian Area -->
-                        <div class="accordions" id="accordion" role="tablist" aria-multiselectable="true">
-                            <!-- single accordian area start -->
-                            <div class="panel single-accordion">
-                                <h6><a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Curabitur pulvinar vel augue sit amet vestibulum
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                    </a></h6>
-                                <div id="collapseOne" class="accordion-content collapse">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis laudantium, deserunt esse, aspernatur, laborum ipsa necessitatibus dolor architecto sint minima suscipit. Blanditiis perspiciatis animi ipsam, officia modi aperiam aut temporibus.</p>
-                                </div>
-                            </div>
-                            <!-- single accordian area start -->
-                            <div class="panel single-accordion">
-                                <h6>
-                                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                        </a>
-                                </h6>
-                                <div id="collapseTwo" class="accordion-content collapse">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur fugit odio, voluptatem dolor possimus maxime sint debitis id vel numquam, porro aperiam eos distinctio optio perspiciatis officia, quisquam repellendus tenetur!</p>
-                                </div>
-                            </div>
-                            <!-- single accordian area start -->
-                            <div class="panel single-accordion">
-                                <h6>
-                                    <a role="button" aria-expanded="true" aria-controls="collapseThree" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Donec scelerisque ante id efficitur pharetra 
-                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                    </a>
-                                </h6>
-                                <div id="collapseThree" class="accordion-content collapse">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus repudiandae nam ad corrupti illo pariatur inventore ratione reiciendis quidem soluta exercitationem, incidunt, expedita, cupiditate perspiciatis debitis temporibus qui. Culpa, facere.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- App Users Map Area -->
-        <div class="app-users-map-area">
-            <img src="{{asset('frontend/img/bg-img/world-map.png')}}" alt="">
-            <div class="map-pins">
-                <!-- Single Pin -->
-                <div class="single-map-pin"></div>
-                <!-- Single Pin -->
-                <div class="single-map-pin"></div>
-                <!-- Single Pin -->
-                <div class="single-map-pin"></div>
-                <!-- Single Pin -->
-                <div class="single-map-pin"></div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** App FAQ Area End ***** -->
-
-    <!-- ***** Cool Facts Area Start ***** -->
-    <section class="cool_facts_area clearfix">
-
-        <div class="cool-facts-bg-shape">
-            <!-- Shape -->
-            <img src="{{asset('frontend/img/core-img/counters.png')}}" alt="">
-            <!-- Cool Facts Content -->
-            <div class="coolfacts-content">
-                <div class="container">
-                    <div class="row">
-                        <!-- Single Cool Fact -->
-                        <div class="col-12 col-sm-6 col-md">
-                            <div class="single-cool-fact wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="counter-area">
-                                    <h3><span class="counter">10</span></h3>
-                                </div>
-                                <div class="cool-facts-content">
-                                    <p>Years of Experience</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Cool Fact-->
-                        <div class="col-12 col-sm-6 col-md">
-                            <div class="single-cool-fact wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="counter-area">
-                                    <h3>+<span class="counter">500</span></h3>
-                                </div>
-                                <div class="cool-facts-content">
-                                    <p>Happy Clients</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Cool Fact -->
-                        <div class="col-12 col-sm">
-                            <div class="single-cool-fact wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="counter-area">
-                                    <h3><span class="counter">17</span>k</h3>
-                                </div>
-                                <div class="cool-facts-content">
-                                    <p>Followers on FB</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Cool Fact -->
-                        <div class="col-12 col-sm">
-                            <div class="single-cool-fact wow fadeInUp" data-wow-delay="0.8s">
-                                <div class="counter-area">
-                                    <h3><span class="counter">132</span></h3>
-                                </div>
-                                <div class="cool-facts-content">
-                                    <p>Finished Projects</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Cool Fact -->
-                        <div class="col-12 col-sm">
-                            <div class="single-cool-fact wow fadeInUp" data-wow-delay="0.8s">
-                                <div class="counter-area">
-                                    <h3><span class="counter">03</span></h3>
-                                </div>
-                                <div class="cool-facts-content">
-                                    <p>Coffes a day</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Cool Facts Area End ***** -->
-
-    <!-- ***** App Feature Area Start ***** -->
-    <section class="app-features-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="app-features-content">
-                        <h2>All the best features</h2>
-                        <div class="row">
-                            <!-- Single Feature Area -->
-                            <div class="col-12 col-sm-6">
-                                <div class="single-feature-area">
-                                    <img src="{{asset('frontend/img/bg-img/feature-1.png')}}" alt="">
-                                    <h5>No1 in Sales!</h5>
-                                    <p>Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                                </div>
-                            </div>
-                            <!-- Single Feature Area -->
-                            <div class="col-12 col-sm-6">
-                                <div class="single-feature-area">
-                                    <img src="{{asset('frontend/img/bg-img/feature-2.png')}}" alt="">
-                                    <h5>Online Marketing</h5>
-                                    <p>Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                                </div>
-                            </div>
-                            <!-- Single Feature Area -->
-                            <div class="col-12 col-sm-6">
-                                <div class="single-feature-area">
-                                    <img src="{{asset('frontend/img/bg-img/feature-3.png')}}" alt="">
-                                    <h5>Modern Design</h5>
-                                    <p>Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                                </div>
-                            </div>
-                            <!-- Single Feature Area -->
-                            <div class="col-12 col-sm-6">
-                                <div class="single-feature-area">
-                                    <img src="{{asset('frontend/img/bg-img/feature-4.png')}}" alt="">
-                                    <h5>Documented</h5>
-                                    <p>Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                                </div>
-                            </div>
-                            <!-- Single Feature Area -->
-                            <div class="col-12 col-sm-6">
-                                <div class="single-feature-area">
-                                    <img src="{{asset('frontend/img/bg-img/feature-5.png')}}" alt="">
-                                    <h5>Easy to use</h5>
-                                    <p>Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                                </div>
-                            </div>
-                            <!-- Single Feature Area -->
-                            <div class="col-12 col-sm-6">
-                                <div class="single-feature-area">
-                                    <img src="{{asset('frontend/img/bg-img/feature-6.png')}}" alt="">
-                                    <h5>Google Font</h5>
-                                    <p>Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+   		<div class="header-logo">
+	        <a href="index.html">FlixZone</a>
+	    </div>
         
-        <!-- App Feature Thumb -->
-        <div class="app-feature-side-thumb">
-            <img src="{{asset('frontend/img/bg-img/feature-side.jpg')}}" alt="">
-        </div>
-    </section>
-    <!-- ***** App Feature Area End ***** -->
+	   	<nav id="header-nav-wrap">
+			<ul class="header-main-nav">
+				<li class="current"><a class="smoothscroll"  href="/" title="home">Home</a></li>
+                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+				<li><a class="smoothscroll"  href="#pricing" title="pricing">Pricing</a></li>
+                <li><a class="smoothscroll"  href="#testimonials" title="testimonials">Testimonials</a></li>
+                <li><a class="smoothscroll"  href="#contact" title="contact">Contact Us</a></li>
+				<li><a class="smoothscroll"  href="#download" title="download">Download</a></li>	
+			</ul>
 
+            <a href="{{route('login')}}" title="sign-up" class="button button-primary cta">Signin</a>
+		</nav>
+
+		<a class="header-menu-toggle" href="#"><span>Menu</span></a>    	
+   	
+   </header> <!-- /header -->
+
+
+   <!-- home
+   ================================================== -->
+   <section id="home" data-parallax="scroll" data-image-src="{{asset('frontend/images/hero-bg.jpg')}}" data-natural-width=3000 data-natural-height=2000>
+
+        <div class="overlay"></div>
+        <div class="home-content">        
+
+            <div class="row contents">                     
+                <div class="home-content-left">
+
+                    <h3 data-aos="fade-up">Welcome to FlixZone</h3>
+
+                    <h1 data-aos="fade-up">
+                        Creative Landing <br>
+                        Page to Showcase <br>
+                        Your Amazing App.
+                    </h1>
+
+                    <div class="buttons" data-aos="fade-up">
+                        <a href="#download" class="smoothscroll button stroke">
+                            <span class="icon-circle-down" aria-hidden="true"></span>
+                            Download App
+                        </a>
+                        <a href="http://player.vimeo.com/video/14592941?title=0&amp;byline=0&amp;portrait=0&amp;color=39b54a" data-lity class="button stroke">
+                            <span class="icon-play" aria-hidden="true"></span>
+                            Watch Video
+                        </a>
+                    </div>                                         
+
+                </div>
+
+                <div class="home-image-right">
+                    <img src="{{asset('frontend/images/iphone-app-470.png')}}" 
+                        srcset="{{asset('frontend/images/iphone-app-470.png 1x, frontend/images/iphone-app-940.png 2x')}}"  
+                        data-aos="fade-up">
+                </div>
+            </div>
+
+        </div> <!-- end home-content -->
+
+        <ul class="home-social-list">
+            <li>
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+            </li>
+        </ul>
+        <!-- end home-social-list -->
+
+        <div class="home-scrolldown">
+            <a href="#about" class="scroll-icon smoothscroll">
+                <span>Scroll Down</span>
+                <i class="icon-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+    </section> <!-- end home -->  
+
+
+    <!-- about
+    ================================================== -->
+    <section id="about">
+
+        <div class="row about-intro">
+
+            <div class="col-four">
+                <h1 class="intro-header" data-aos="fade-up">About Our App</h1>
+            </div>
+            <div class="col-eight">
+                <p class="lead" data-aos="fade-up">
+                    Excepteur enim magna veniam labore veniam sint. Ex aliqua esse proident ullamco voluptate. Nisi nisi nisi aliqua eiusmod dolor dolor proident deserunt occaecat elit Lorem reprehenderit. Id culpa veniam ex aliqua magna elit pariatur do nulla. Excepteur enim magna veniam labore veniam sint.
+                </p>
+            </div>                       
+            
+        </div>
+
+        <div class="row about-features">
+
+            <div class="features-list block-1-3 block-m-1-2 block-mob-full group">
+
+                <div class="bgrid feature" data-aos="fade-up">	
+
+                    <span class="icon"><i class="icon-window"></i></span>            
+
+                    <div class="service-content">	
+
+                        <h3>Fully Resposive</h3>
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                        
+                    </div> 	         	 
+
+                    </div> <!-- /bgrid -->
+
+                    <div class="bgrid feature" data-aos="fade-up">	
+
+                        <span class="icon"><i class="icon-image"></i></span>                          
+
+                    <div class="service-content">	
+                        <h3>Retina Ready</h3>  
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+
+                        
+                    </div>	                          
+
+                </div> <!-- /bgrid -->
+
+                <div class="bgrid feature" data-aos="fade-up">
+
+                    <span class="icon"><i class="icon-paint-brush"></i></span>		            
+
+                    <div class="service-content">
+                        <h3>Stylish Design</h3>
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p> 
+                            
+                    </div> 	            	               
+
+                </div> <!-- /bgrid -->
+
+                    <div class="bgrid feature" data-aos="fade-up">
+
+                        <span class="icon"><i class="icon-file"></i></span>	              
+
+                    <div class="service-content">
+                        <h3>Clean Code</h3>
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p> 
+                        
+                    </div>                
+
+                    </div> <!-- /bgrid -->
+
+                <div class="bgrid feature" data-aos="fade-up">
+
+                    <span class="icon"><i class="icon-sliders"></i></span>	            
+
+                    <div class="service-content">	
+                        <h3>Easy To Customize</h3>
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>                            
+                    </div>	               
+
+                </div> <!-- /bgrid -->
+
+                <div class="bgrid feature" data-aos="fade-up">
+
+                    <span class="icon"><i class="icon-gift"></i></span>	   	           
+
+                    <div class="service-content">
+                        <h3>Free of Charge</h3>
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p> 
+                            
+                    </div>	               
+
+                </div> <!-- /bgrid -->
+
+            </div> <!-- end features-list -->
+
+        </div> <!-- end about-features -->
+
+        <div class="row about-how">
+          
+            <h1 class="intro-header" data-aos="fade-up">How The App Works?</h1>           
+
+            <div class="about-how-content" data-aos="fade-up">
+                <div class="about-how-steps block-1-2 block-tab-full group">
+
+                    <div class="bgrid step" data-item="1">
+                        <h3>Sign-Up</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        </p> 
+                    </div>
+
+                    <div class="bgrid step" data-item="2">
+                        <h3>Upload</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        </p> 
+                    </div>               
+               
+                    <div class="bgrid step" data-item="3">
+                        <h3>Create</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        </p> 
+                    </div>
+
+                    <div class="bgrid step" data-item="4">
+                        <h3>Publish</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                        </p> 
+                    </div>  
+
+                </div>           
+           </div> <!-- end about-how-content -->
+
+        </div> <!-- end about-how -->
+
+        <div class="row about-bottom-image">
+
+           <img src="{{asset('frontend/images/app-screens-1200.png')}}" 
+                srcset="{{asset('frontend/images/app-screens-600.png 600w, 
+                        frontend/images/app-screens-1200.png 1200w, 
+                        frontend/images/app-screens-2800.png 2800w')}}" 
+                sizes="(max-width: 2800px) 100vw, 2800px"
+                alt="App Screenshots" data-aos="fade-up">
+
+        </div>  <!-- end about-bottom-image -->       
+        
+    </section> <!-- end about -->  
    
 
-    <!-- ***** Footer Area Start ***** -->
-    <footer class="footer-area text-center clearfix">
-        <!-- Shape 1 -->
-        <div class="footer-bg-shape">
-            <img src="{{asset('frontend/img/core-img/footer-bg.png')}}" alt="Footer Shape">
-        </div>
-        <!-- Shape 2 -->
-        <div class="footer-bg-shape-2">
-            <img src="{{asset('frontend/img/core-img/price-table.png')}}" alt="">
+    <!-- pricing
+    ================================================== -->
+    <section id="pricing">
+        <div class="row pricing-content">
+
+            <div class="col-four pricing-intro">
+                <h1 class="intro-header" data-aos="fade-up">Our Pricing Options</h1>
+
+                <p data-aos="fade-up">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. 
+                </p>
+            </div>
+
+            <div class="col-eight pricing-table">
+                <div class="row">
+
+                    <div class="col-six plan-wrap">
+                        <div class="plan-block" data-aos="fade-up"> 
+
+                            <div class="plan-top-part">
+                                <h3 class="plan-block-title">Lite Plan</h3>
+                                <p class="plan-block-price"><sup>$</sup>25</p>
+                                <p class="plan-block-per">Per Month</p>
+                            </div>
+
+                            <div class="plan-bottom-part">
+                                <ul class="plan-block-features">
+                                    <li><span>3GB</span> Storage</li>
+                                    <li><span>10GB</span> Bandwidth</li>	                  
+                                    <li><span>5</span> Databases</li>		                  
+                                    <li><span>30</span> Email Accounts</li>
+                                </ul>
+
+                                <a class="button button-primary large" href="">Get Started</a>
+                            </div>  
+                     
+                        </div>
+                    </div> <!-- end plan-wrap -->
+
+                    <div class="col-six plan-wrap">
+                        <div class="plan-block primary" data-aos="fade-up">
+
+                            <div class="plan-top-part">
+                                <h3 class="plan-block-title">Pro Plan</h3>
+                                <p class="plan-block-price"><sup>$</sup>50</p>
+                                <p class="plan-block-per">Per Month</p>
+                            </div>
+
+                            <div class="plan-bottom-part">
+                                <ul class="plan-block-features">
+                                    <li><span>5GB</span> Storage</li>
+                                    <li><span>20GB</span> Bandwidth</li>	                  
+                                    <li><span>15</span> Databases</li>		                  
+                                    <li><span>70</span> Email Accounts</li>
+                                </ul>
+
+                                <a class="button button-primary large" href="">Get Started</a>
+                            </div>
+
+                        </div>
+                    </div> <!-- end plan-wrap -->
+
+                </div>               
+            </div> <!-- end pricing-table -->
+
+        </div> <!-- end pricing-content -->
+    </section> <!-- end pricing -->
+
+
+    <!-- Testimonials Section
+    ================================================== -->
+    <section id="testimonials">
+
+        <div class="row">
+            <div class="col-twelve">
+                <h1 class="intro-header" data-aos="fade-up">What They Say About Our App.</h1>
+            </div>   		
+        </div>   	
+
+        <div class="row owl-wrap">
+
+            <div id="testimonial-slider"  data-aos="fade-up">
+
+                <div class="slides owl-carousel">
+
+                    <div>
+                        <p>
+                        Your work is going to fill a large part of your life, and the only way to be truly satisfied is
+                        to do what you believe is great work. And the only way to do great work is to love what you do.
+                        If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.
+                        </p> 
+
+                        <div class="testimonial-author">
+                                <img src="{{asset('frontend/images/avatars/user-02.jpg')}}" alt="Author image">
+                                <div class="author-info">
+                                    Steve Jobs
+                                    <span class="position">CEO, Apple.</span>
+                                </div>
+                        </div>                 
+                    </div> 
+
+                    <div>
+                        <p>
+                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                        nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.    
+                        </p>
+
+                        <div class="testimonial-author">
+                                <img src="{{asset('frontend/images/avatars/user-03.jpg')}}" alt="Author image">
+                                <div class="author-info">
+                                    John Doe
+                                    <span>CEO, ABC Corp.</span>
+                                </div>
+                        </div>                                         
+                    </div> 
+
+                </div> <!-- end slides -->
+
+            </div> <!-- end testimonial-slider -->         
+            
+        </div> <!-- end flex-container -->
+
+    </section> <!-- end testimonials -->
+    
+
+     <!-- contact
+    ================================================== -->
+    <section id="pricing">
+        <div class="row" id="contact">
+            <div class="tab-full">
+                <center>
+                    <h3>Contact Us</h3>
+                </center>
+                <form id="contact" action="{{route('contact')}}" method="POST">
+                {{ csrf_field() }}
+                    <div>
+                        <label for="sampleInput">Your email</label>
+                        <input class="full-width" type="email" placeholder="test@mailbox.com" id="email" name="email" require>
+                    </div>
+                    <div>
+                        <label for="sampleRecipientInput">Reason for contacting</label>
+                        <div class="ss-custom-select">
+                            <select class="full-width" id="reason" name="reason" require>
+                                <option value="Questions">Questions</option>
+                                <option value="Report">Report</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>			         	
+                    </div>
+                
+                    <label for="exampleMessage">Message</label>
+                    <textarea class="full-width" placeholder="Your message" id="message" name="message" require></textarea>
+
+                    <label class="add-bottom">
+                    @if(count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert-box ss-error hideit">
+                                <p>{{$error}}</p>
+                                <i class="fa fa-times close"></i>
+                            </div>
+                        @endforeach
+                    @endif
+
+                    @if(session('success'))
+                        <div class="alert-box ss-success hideit">
+                            <p>{{session('success')}}</p>
+                            <i class="fa fa-times close"></i>
+                        </div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert-box ss-error hideit">
+                            <p>{{session('error')}}</p>
+                            <i class="fa fa-times close"></i>
+                        </div>
+                    @endif
+                    </label>
+                    
+                    <center>
+                        <input class="button-primary" type="submit" value="Submit">
+                    </center>
+
+                </form>           
         </div>
 
-        <div class="container h-100">
-            <div class="row h-100 justify-content-center">
-                <div class="col-12 col-md-8">
-                    <div class="footer-content">
-                        <h2>Download App</h2>
-                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac nibh sed mi ullamcorper rhoncus. </h4>
-                    </div>
-                    <div class="app-download-area">
-                        <div class="app-download-btn active">
-                            <!-- Windows Store Btn -->
-                            <a href="{{route('windows')}}"><i class="fa fa-windows"></i><p class="mb-0"><span>available on</span> Windows Store</p></a>
-                        </div>
-                        <div class="app-download-btn active">
-                            <!-- Google Store Btn -->
-                            <a href="{{route('android')}}"><i class="fa fa-android"></i><p class="mb-0"><span>available on</span> Google Store</p></a>
-                        </div>
-                        <div class="app-download-btn">
-                            <!-- Apple Store Btn -->
-                            <a href="{{route('iphone')}}"><i class="fa fa-apple"></i><p class="mb-0"><span>available on</span> Apple Store</p></a>
-                        </div>
-                    </div>
-                    <div class="footer-social-info">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
-                    <!-- Foooter Text-->
-                    <div class="copyright-text">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> in India
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
+        
+        
+                 
+
+        </div> <!-- end row -->
+    </section> <!-- end contact --> 
+
+    <!-- download
+    ================================================== -->
+    <section id="download">
+
+        <div class="row">
+            <div class="col-full">
+                <h1 class="intro-header"  data-aos="fade-up">Download Our App Today!</h1>
+
+                <p class="lead" data-aos="fade-up">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                </p>
+
+                <ul class="download-badges">
+                    <li><a href="{{route('iphone')}}" title="" class="badge-appstore"  data-aos="fade-up">App Store</a></li>
+                    <li><a href="{{route('android')}}" title="" class="badge-googleplay" data-aos="fade-up">Play Store</a></li>
+                </ul>
+
             </div>
         </div>
-    </footer>
-    <!-- ***** Footer Area End ***** -->
 
-    <!-- jQuery-2.2.4 js -->
-    <script src="{{asset('frontend/js/jquery-2.2.4.min.js')}}"></script>
-    <!-- Popper js -->
-    <script src="{{asset('frontend/js/popper.min.js')}}"></script>
-    <!-- Bootstrap js -->
-    <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-    <!-- All Plugins js -->
+    </section> <!-- end download -->  
+    
+   
+
+
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="footer-main">
+            <div class="row">  
+
+                <div class="col-three md-1-3 tab-full footer-info">            
+
+                    <div class="footer-logo"></div>
+
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
+                    </p>
+
+                    <ul class="footer-social-list">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook-square"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                    
+                    
+                </div> <!-- end footer-info -->
+
+                <div class="col-three md-1-3 tab-1-2 mob-full footer-contact">
+
+                    <h4>Contact</h4>
+
+                    <p>
+                    1600 Amphitheatre Parkway<br>
+                    Mountain View, CA <br>
+                    94043 US<br>		        
+                    </p>
+
+                    <p>
+                    someone@dazzlesite.com <br>
+                    Phone: (+63) 555 1212 <br>
+                    Fax: (+63) 555 0100    
+                    </p>                    
+
+                </div> <!-- end footer-contact -->  
+
+                <div class="col-two md-1-3 tab-1-2 mob-full footer-site-links">
+
+                    <h4>Site Links</h4>
+
+                    <ul class="list-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>	      		
+                            
+                </div> <!-- end footer-site-links --> 
+
+                <div class="col-four md-1-2 tab-full footer-subscribe">
+
+                    <h4>Our Newsletter</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <div class="subscribe-form">
+                
+                        <form id="mc-form" class="group" novalidate="true">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required=""> 
+                
+                            <input type="submit" name="subscribe" value="Send">
+                
+                            <label for="mc-email" class="subscribe-message"></label>
+                
+                        </form>
+
+                    </div>	      		
+                            
+                </div> <!-- end footer-subscribe -->         
+
+            </div> <!-- /row -->
+        </div> <!-- end footer-main -->
+
+
+      <div class="footer-bottom">
+
+      	<div class="row">
+
+      		<div class="col-twelve">
+	      		<div class="copyright">
+		         	<span>© Copyright FlixZone 2019.</span> 
+		         	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>		         	
+		         </div>
+
+		         <div id="go-top">
+		            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up"></i></a>
+		         </div>         
+	      	</div>
+
+      	</div> <!-- end footer-bottom -->     	
+
+      </div>
+
+    </footer>
+
+    <div id="preloader"> 
+    	<div id="loader"></div>
+    </div>  
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{{asset('frontend/js/jquery-2.1.3.min.js')}}"></script>
     <script src="{{asset('frontend/js/plugins.js')}}"></script>
-    <!-- Active js -->
-    <script src="{{asset('frontend/js/active.js')}}"></script>
+    <script src="{{asset('frontend/js/main.js')}}"></script>
+
 </body>
 
 </html>

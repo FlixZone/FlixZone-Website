@@ -82,8 +82,8 @@ Route::prefix('/')->middleware('checklogin')->group(function(){
 
     // Home page
     Route::get('/','PagesController@index')->name('index');
-    // Contact page
-    Route::get('contact','PagesController@contact')->name('contact');
+    // Contact
+    Route::post('contact','PagesController@contact')->name('contact');
     // Login & Register page
     Route::get('login','PagesController@login')->name('login');
     // Forget Password page
@@ -97,7 +97,6 @@ Route::prefix('/')->middleware('checklogin')->group(function(){
     // App download
     Route::get('/android','AppsController@android')->name('android');
     Route::get('/iphone','AppsController@iphone')->name('iphone');
-    Route::get('/windows','AppsController@windows')->name('windows');
 
 });
 
