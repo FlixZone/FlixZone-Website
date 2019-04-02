@@ -35,7 +35,7 @@
         <div id="preloader">
             <div class="canvas">
                 <img src="{{asset('backend/assets/img/logo.png')}}" alt="logo" class="loader-logo">
-                <div class="spinner"></div>   
+                <div class="spinner"></div>
             </div>
         </div>
         <!-- End Preloader -->
@@ -51,21 +51,21 @@
                     @include('inc.navigation')
                     <!-- End Side Navbar -->
                 </div>
-                
+
                 <!-- End Left Sidebar -->
                 <div class="content-inner">
                     @include('inc.messages')
-					
+
                     @yield('content')
-                    
+
                     <a href="#" class="go-top"><i class="la la-arrow-up"></i></a>
                 </div>
                 <!-- End Content -->
             </div>
             <!-- End Page Content -->
         </div>
-       
-        
+
+
         <!-- Begin Vendor Js -->
         <script src="{{asset('backend/assets/vendors/js/base/jquery.min.js')}}"></script>
         <script src="{{asset('backend/assets/vendors/js/base/core.min.js')}}"></script>
@@ -85,12 +85,13 @@
         <script src="{{asset('backend/assets/vendors/js/datatables/pdfmake.min.js')}}"></script>
         <script src="{{asset('backend/assets/vendors/js/datatables/vfs_fonts.js')}}"></script>
         <script src="{{asset('backend/assets/vendors/js/datatables/buttons.print.min.js')}}"></script>
-        <script src="{{asset('backend/assets/vendors/js/app/app.min.js')}}"></script>
+        <!--<script src="{{asset('backend/assets/vendors/js/app/app.min.js')}}"></script>-->
         <!-- End Page Vendor Js -->
         <!-- Begin Page Snippets -->
-        <script src="{{asset('backend/assets/js/dashboard/db-default.js')}}"></script>
+        <!--<script src="{{asset('backend/assets/js/dashboard/db-default.js')}}"></script>-->
         <script src="{{asset('backend/assets/js/components/tables/tables.js')}}"></script>
-        <script src="{{asset('backend/assets/js/components/widgets/widgets.min.js')}}"></script>
+        <!--<script src="{{asset('backend/assets/js/components/widgets/widgets.min.js')}}"></script>-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
         <!-- End Page Snippets -->
     </body>
 </html>

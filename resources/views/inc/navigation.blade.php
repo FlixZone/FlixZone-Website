@@ -26,7 +26,7 @@
                 <li><a href="{{route('viewmega')}}">View Mega Accounts</a></li>
             </ul>
         </li>
-        
+
         <li><a href="#dropdown-poster" aria-expanded="false" data-toggle="collapse"><i class="la la-image"></i><span>Posters</span></a>
             <ul id="dropdown-poster" class="collapse list-unstyled pt-0">
                 <li><a href="{{route('addposter')}}">Add Poster</a></li>
@@ -40,12 +40,12 @@
                 <li><a href="{{route('viewapps')}}">View App</a></li>
             </ul>
         </li>
-        
+
     </ul>
     <span class="heading">Pages</span>
     <ul class="list-unstyled">
         <li><a href="{{route('sociallinks')}}"><i class="la la-instagram"></i><span>Manage Social Links</span></a></li>
         <li><a href="{{route('changepassword')}}"><i class="la la-key"></i><span>Change Password</span></a></li>
-    </ul>   
-    
+    </ul>
+
 </nav>

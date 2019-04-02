@@ -1,6 +1,6 @@
 <header class="header">
-    <nav class="navbar fixed-top">         
-        
+    <nav class="navbar fixed-top">
+
         <!-- Begin Topbar -->
         <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
             <!-- Begin Logo -->
