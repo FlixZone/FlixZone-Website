@@ -13,7 +13,8 @@ class PagesController extends Controller
 {
     public function index(){
         $title="FlixZone";
-        return view('pages.frontend.index')->with('title',$title);
+        $socials = DB::table('socials')->where('id',1)->first();
+        return view('pages.frontend.index')->with('title',$title)->with('socials',$socials);
     }
 
     public function contact(Request $request){

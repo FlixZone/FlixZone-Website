@@ -35,7 +35,6 @@
                             <select id="plateform" name="plateform" placeholder="E.g. Android" class="form-control" require>
                                 <option name="Android" value="Android">Android</option>
                                 <option name="iphone" value="iphone">iPhone</option>
-                                <option name="windowsphone" value="windowsphone">Windows Phone</option>
                             </select>
                         </div>
                     </div>

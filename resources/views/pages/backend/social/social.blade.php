@@ -55,7 +55,7 @@
             <div class="widget-body">
                 <div class="media">
                     <div class="align-self-center ml-5 mr-5">
-                        <i class="ion-social-instagram-outline text-instagram"></i>
+                        <i class="ion-social-instagram text-instagram"></i>
                     </div>
                     <div class="media-body align-self-center">
                         <input type="text"  id="instagram" name="instagram" value="{{$social->instagram}}" class="form-control" require>
@@ -65,6 +65,22 @@
         </div>
     </div>
     <!-- End Instagram -->
+    <!-- Begin Video -->
+    <div class="col-xl-12 col-md-12 col-sm-12">
+        <div class="widget widget-12 has-shadow">
+            <div class="widget-body">
+                <div class="media">
+                    <div class="align-self-center ml-5 mr-5">
+                        <i class="ion-ios-videocam text-youtube"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <input type="text"  id="video" name="video" value="{{$social->video}}" class="form-control" require>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Video -->
 
     <div class="col-xl-12 col-md-12 col-sm-12">
         <div class="align-self-center">

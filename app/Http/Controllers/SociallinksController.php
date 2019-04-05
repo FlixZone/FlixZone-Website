@@ -20,6 +20,7 @@ class SociallinksController extends Controller
             'facebook' => 'required',
             'twitter' => 'required',
             'instagram' => 'required',
+            'video' => 'required'
         
         ]);
             
@@ -29,6 +30,7 @@ class SociallinksController extends Controller
         $sociallink->facebook = $request->input('facebook');
         $sociallink->twitter = $request->input('twitter');
         $sociallink->instagram = $request->input('instagram');
+        $sociallink->video = $request->input('video');
         $sociallink->save();
 
         return redirect(route('sociallinks'))->with('success','Social Links Updated...');

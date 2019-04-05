@@ -43,15 +43,15 @@
    <header id="header" class="row">   
 
    		<div class="header-logo">
-	        <a href="index.html">FlixZone</a>
+	        <a href="/">FlixZone</a>
 	    </div>
         
 	   	<nav id="header-nav-wrap">
 			<ul class="header-main-nav">
 				<li class="current"><a class="smoothscroll"  href="/" title="home">Home</a></li>
                 <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-				<li><a class="smoothscroll"  href="#pricing" title="pricing">Pricing</a></li>
-                <li><a class="smoothscroll"  href="#testimonials" title="testimonials">Testimonials</a></li>
+				<!--<li><a class="smoothscroll"  href="#pricing" title="pricing">Pricing</a></li>
+                <li><a class="smoothscroll"  href="#testimonials" title="testimonials">Testimonials</a></li>-->
                 <li><a class="smoothscroll"  href="#contact" title="contact">Contact Us</a></li>
 				<li><a class="smoothscroll"  href="#download" title="download">Download</a></li>	
 			</ul>
@@ -77,9 +77,10 @@
                     <h3 data-aos="fade-up">Welcome to FlixZone</h3>
 
                     <h1 data-aos="fade-up">
-                        Creative Landing <br>
-                        Page to Showcase <br>
-                        Your Amazing App.
+                        Watch Your <br>
+                        Favourite <span style="color:#ee2b7a;">❤</span><br>
+                        Movies & TV Shows <br>
+                        For Free...
                     </h1>
 
                     <div class="buttons" data-aos="fade-up">
@@ -87,7 +88,7 @@
                             <span class="icon-circle-down" aria-hidden="true"></span>
                             Download App
                         </a>
-                        <a href="http://player.vimeo.com/video/14592941?title=0&amp;byline=0&amp;portrait=0&amp;color=39b54a" data-lity class="button stroke">
+                        <a href="{{$socials->video}}" data-lity class="button stroke">
                             <span class="icon-play" aria-hidden="true"></span>
                             Watch Video
                         </a>
@@ -106,16 +107,16 @@
 
         <ul class="home-social-list">
             <li>
-                <a href="#"><i class="fa fa-facebook-square"></i></a>
+                <a href="{{$socials->facebook}}"><i class="fa fa-facebook-square"></i></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="{{$socials->twitter}}"><i class="fa fa-twitter"></i></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="{{$socials->instagram}}"><i class="fa fa-instagram"></i></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="mailto:pilot.flixzone@gmail.com"><i class="fa fa-envelope"></i></a>
             </li>
         </ul>
         <!-- end home-social-list -->
@@ -242,7 +243,7 @@
 
         <div class="row about-how">
           
-            <h1 class="intro-header" data-aos="fade-up">How The App Works?</h1>           
+            <h1 class="intro-header" data-aos="fade-up">How The App Works ?</h1>           
 
             <div class="about-how-content" data-aos="fade-up">
                 <div class="about-how-steps block-1-2 block-tab-full group">
@@ -292,7 +293,7 @@
 
     <!-- pricing
     ================================================== -->
-    <section id="pricing">
+    <!--<section id="pricing">
         <div class="row pricing-content">
 
             <div class="col-four pricing-intro">
@@ -326,9 +327,9 @@
                             </div>  
                      
                         </div>
-                    </div> <!-- end plan-wrap -->
+                    </div>--> <!-- end plan-wrap -->
 
-                    <div class="col-six plan-wrap">
+                    <!--<div class="col-six plan-wrap">
                         <div class="plan-block primary" data-aos="fade-up">
 
                             <div class="plan-top-part">
@@ -349,13 +350,13 @@
                             </div>
 
                         </div>
-                    </div> <!-- end plan-wrap -->
+                    </div> --><!-- end plan-wrap -->
 
-                </div>               
-            </div> <!-- end pricing-table -->
+                <!--</div>               
+            </div> --><!-- end pricing-table -->
 
-        </div> <!-- end pricing-content -->
-    </section> <!-- end pricing -->
+        <!--</div> --><!-- end pricing-content -->
+    <!--</section> --> <!-- end pricing -->
 
 
     <!-- Testimonials Section
@@ -364,7 +365,7 @@
 
         <div class="row">
             <div class="col-twelve">
-                <h1 class="intro-header" data-aos="fade-up">What They Say About Our App.</h1>
+                <h1 class="intro-header" data-aos="fade-up">Why we created The App ?</h1>
             </div>   		
         </div>   	
 
@@ -376,16 +377,16 @@
 
                     <div>
                         <p>
-                        Your work is going to fill a large part of your life, and the only way to be truly satisfied is
-                        to do what you believe is great work. And the only way to do great work is to love what you do.
-                        If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.
+                        I am found of watching movies, that's something i can do my whole time. But, when i was child I didn't have enough
+                        money to watch new Movies. So, I decided to made this App so anyone can watch their loved 
+                        Movies and TV Shows for free. I hope you will like this and it will grow more with the time.
                         </p> 
 
                         <div class="testimonial-author">
-                                <img src="{{asset('frontend/images/avatars/user-02.jpg')}}" alt="Author image">
+                                <img src="{{asset('frontend/images/avatars/user-01.jpg')}}" alt="Author image">
                                 <div class="author-info">
-                                    Steve Jobs
-                                    <span class="position">CEO, Apple.</span>
+                                    <a href="http://github.com/vasuratanpara">Vasu Ratanpara</a>
+                                    <span class="position">Founder, FlixZone.</span>
                                 </div>
                         </div>                 
                     </div> 
@@ -398,10 +399,10 @@
                         </p>
 
                         <div class="testimonial-author">
-                                <img src="{{asset('frontend/images/avatars/user-03.jpg')}}" alt="Author image">
+                                <img src="{{asset('frontend/images/avatars/user-02.jpg')}}" alt="Author image">
                                 <div class="author-info">
-                                    John Doe
-                                    <span>CEO, ABC Corp.</span>
+                                    <a href="https://github.com/ramakantgambhava"> Ramakant Patel </a>
+                                    <span>Co-Founder, FlixZone.</span>
                                 </div>
                         </div>                                         
                     </div> 
@@ -427,7 +428,7 @@
                 {{ csrf_field() }}
                     <div>
                         <label for="sampleInput">Your email</label>
-                        <input class="full-width" type="email" placeholder="test@mailbox.com" id="email" name="email" require>
+                        <input class="full-width" type="email" placeholder="abc@xyz.com" id="email" name="email" require>
                     </div>
                     <div>
                         <label for="sampleRecipientInput">Reason for contacting</label>
@@ -488,11 +489,11 @@
 
         <div class="row">
             <div class="col-full">
-                <h1 class="intro-header"  data-aos="fade-up">Download Our App Today!</h1>
+                <h1 class="intro-header"  data-aos="fade-up">Download Our App Today !</h1>
 
-                <p class="lead" data-aos="fade-up">
+                <!--<p class="lead" data-aos="fade-up">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                </p>
+                </p>-->
 
                 <ul class="download-badges">
                     <li><a href="{{route('iphone')}}" title="" class="badge-appstore"  data-aos="fade-up">App Store</a></li>
@@ -514,7 +515,7 @@
         <div class="footer-main">
             <div class="row">  
 
-                <div class="col-three md-1-3 tab-full footer-info">            
+                <div class="col-six md-1-3 tab-full footer-info">            
 
                     <div class="footer-logo"></div>
 
@@ -524,59 +525,24 @@
 
                     <ul class="footer-social-list">
                         <li>
-                            <a href="#"><i class="fa fa-facebook-square"></i></a>
+                            <a href="{{$socials->facebook}}"><i class="fa fa-facebook-square"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="{{$socials->twitter}}"><i class="fa fa-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-behance"></i></a>
+                            <a href="{{$socials->instagram}}"><i class="fa fa-instagram"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="mailto:pilot.flixzone@gmail.com"><i class="fa fa-envelope"></i></a>
                         </li>
                     </ul>
                     
                     
                 </div> <!-- end footer-info -->
 
-                <div class="col-three md-1-3 tab-1-2 mob-full footer-contact">
 
-                    <h4>Contact</h4>
-
-                    <p>
-                    1600 Amphitheatre Parkway<br>
-                    Mountain View, CA <br>
-                    94043 US<br>		        
-                    </p>
-
-                    <p>
-                    someone@dazzlesite.com <br>
-                    Phone: (+63) 555 1212 <br>
-                    Fax: (+63) 555 0100    
-                    </p>                    
-
-                </div> <!-- end footer-contact -->  
-
-                <div class="col-two md-1-3 tab-1-2 mob-full footer-site-links">
-
-                    <h4>Site Links</h4>
-
-                    <ul class="list-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>	      		
-                            
-                </div> <!-- end footer-site-links --> 
-
-                <div class="col-four md-1-2 tab-full footer-subscribe">
+                <div class="col-six md-1-2 tab-full footer-subscribe">
 
                     <h4>Our Newsletter</h4>
 
@@ -608,8 +574,8 @@
 
       		<div class="col-twelve">
 	      		<div class="copyright">
-		         	<span>© Copyright FlixZone 2019.</span> 
-		         	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>		         	
+		         	<span>© Copyright FlixZone 2019.</span>	
+                     <span> Forged with <span style="color:#ee2b7a;">❤</span> in India 🇮🇳 </span>	         	
 		         </div>
 
 		         <div id="go-top">
